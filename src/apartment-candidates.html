@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColocMatch - Candidats pour l'appartement</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/owner-dashboard.css">
+    <link rel="stylesheet" href="css/apartment-candidates.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header/Navigation -->
+        <header>
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-key"></i>
+                    <span>ColocMatch</span>
+                </div>
+                <div class="nav-buttons">
+                    <button class="back-btn" id="backBtn">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <button class="notifications-btn" id="notificationsBtn">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </button>
+                    <div class="user-profile-header">
+                        <img src="20250429_2140_Jeune Homme Humain_simple_compose_01jt1h0tezf1avm9q9v81q1z6f.png" alt="Photo de profil" class="header-profile-img">
+                        <span class="header-profile-name">Mon profil</span>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Apartment Header -->
+            <section class="apartment-header-section">
+                <div class="apartment-header-content">
+                    <div class="apartment-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXBhcnRtZW50fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="Appartement lumineux">
+                    </div>
+                    <div class="apartment-header-info">
+                        <h1>Candidats pour <span class="apartment-name">Appartement lumineux</span></h1>
+                        <p class="apartment-location"><i class="fas fa-map-marker-alt"></i> Lyon, Croix-Rousse</p>
+                        <div class="apartment-quick-info">
+                            <span><i class="fas fa-user-check"></i> 5 candidats au total</span>
+                            <span><i class="fas fa-calendar-alt"></i> 3 nouveaux cette semaine</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Controls Section -->
+            <section class="candidates-controls-section">
+                <div class="filter-container">
+                    <div class="filter-group">
+                        <div class="filter-buttons">
+                            <button class="filter-btn active" data-filter="all">Tous (5)</button>
+                            <button class="filter-btn" data-filter="new">Nouveaux (3)</button>
+                            <button class="filter-btn" data-filter="pending">En attente (2)</button>
+                            <button class="filter-btn" data-filter="contacted">Contactés (0)</button>
+                        </div>
+                    </div>
+                    <div class="sort-group">
+                        <select id="sortSelect">
+                            <option value="compatibility">Compatibilité</option>
+                            <option value="date">Date (plus récents)</option>
+                            <option value="age">Âge</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Candidates List -->
+            <section class="candidates-list-section">
+                <div class="candidates-grid">
+                    <!-- Premier candidat -->
+                    <div class="candidate-card" data-status="new">
+                        <div class="candidate-status">Nouveau</div>
+                        <div class="card-top-section">
+                            <div class="candidate-image">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZSUyMHdvbWFufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="Sophie">
+                            </div>
+                            <div class="candidate-headline">
+                                <h3>Sophie, 24 ans</h3>
+                                <p class="candidate-occupation">Étudiante en design</p>
+                                <div class="compatibility-score">
+                                    <div class="score-circle">
+                                        <span>92%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="candidate-details">
+                            <div class="detail-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>École de Design</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-euro-sign"></i>
+                                <span>Budget: 500€/mois</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Disponible dès maintenant</span>
+                            </div>
+                        </div>
+                        <div class="candidate-bio">
+                            <p>"Je suis une personne calme, organisée et respectueuse. J'adore la décoration et la cuisine. Je cherche une colocation conviviale pour ma dernière année d'études."</p>
+                        </div>
+                        <div class="candidate-actions">
+                            <button class="btn-secondary reject-btn">
+                                <i class="fas fa-times"></i> Décliner
+                            </button>
+                            <button class="btn-primary profile-btn">
+                                <i class="fas fa-user"></i> Voir profil
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Deuxième candidat -->
+                    <div class="candidate-card" data-status="new">
+                        <div class="candidate-status">Nouveau</div>
+                        <div class="card-top-section">
+                            <div class="candidate-image">
+                                <img src="20250429_2140_Jeune Homme Humain_simple_compose_01jt1h0tezf1avm9q9v81q1z6f.png" alt="Thomas">
+                            </div>
+                            <div class="candidate-headline">
+                                <h3>Thomas, 26 ans</h3>
+                                <p class="candidate-occupation">Développeur web</p>
+                                <div class="compatibility-score">
+                                    <div class="score-circle">
+                                        <span>78%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="candidate-details">
+                            <div class="detail-item">
+                                <i class="fas fa-briefcase"></i>
+                                <span>StartUp Tech</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-euro-sign"></i>
+                                <span>Budget: 600€/mois</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Disponible dans 1 mois</span>
+                            </div>
+                        </div>
+                        <div class="candidate-bio">
+                            <p>"Passionné de technologie et de musique, je suis à la recherche d'un logement partagé avec des personnes dynamiques et respectueuses. J'aime voyager et découvrir de nouvelles cultures."</p>
+                        </div>
+                        <div class="candidate-actions">
+                            <button class="btn-secondary reject-btn">
+                                <i class="fas fa-times"></i> Décliner
+                            </button>
+                            <button class="btn-primary profile-btn">
+                                <i class="fas fa-user"></i> Voir profil
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Troisième candidat -->
+                    <div class="candidate-card" data-status="new">
+                        <div class="candidate-status">Nouveau</div>
+                        <div class="card-top-section">
+                            <div class="candidate-image">
+                                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cG9ydHJhaXQlMjBmZW1hbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" alt="Marie">
+                            </div>
+                            <div class="candidate-headline">
+                                <h3>Marie, 23 ans</h3>
+                                <p class="candidate-occupation">Infirmière</p>
+                                <div class="compatibility-score">
+                                    <div class="score-circle">
+                                        <span>85%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="candidate-details">
+                            <div class="detail-item">
+                                <i class="fas fa-hospital"></i>
+                                <span>Hôpital Central</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-euro-sign"></i>
+                                <span>Budget: 550€/mois</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Disponible dès maintenant</span>
+                            </div>
+                        </div>
+                        <div class="candidate-bio">
+                            <p>"Travaillant souvent en horaires décalés, je recherche une colocation avec des personnes compréhensives. J'aime cuisiner et les soirées tranquilles à la maison."</p>
+                        </div>
+                        <div class="candidate-actions">
+                            <button class="btn-secondary reject-btn">
+                                <i class="fas fa-times"></i> Décliner
+                            </button>
+                            <button class="btn-primary profile-btn">
+                                <i class="fas fa-user"></i> Voir profil
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Quatrième candidat -->
+                    <div class="candidate-card" data-status="pending">
+                        <div class="candidate-status">En attente</div>
+                        <div class="card-top-section">
+                            <div class="candidate-image">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBvcnRyYWl0JTIwbWFsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Pierre">
+                            </div>
+                            <div class="candidate-headline">
+                                <h3>Pierre, 28 ans</h3>
+                                <p class="candidate-occupation">Architecte</p>
+                                <div class="compatibility-score">
+                                    <div class="score-circle">
+                                        <span>70%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="candidate-details">
+                            <div class="detail-item">
+                                <i class="fas fa-building"></i>
+                                <span>Cabinet d'Architecture</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-euro-sign"></i>
+                                <span>Budget: 700€/mois</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Disponible dans 2 mois</span>
+                            </div>
+                        </div>
+                        <div class="candidate-bio">
+                            <p>"Amateur d'art et de design, je suis à la recherche d'un espace de vie inspirant. J'apprécie le calme pour travailler mais aussi les moments conviviaux en colocation."</p>
+                        </div>
+                        <div class="candidate-actions">
+                            <button class="btn-secondary reject-btn">
+                                <i class="fas fa-times"></i> Décliner
+                            </button>
+                            <button class="btn-primary profile-btn">
+                                <i class="fas fa-user"></i> Voir profil
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Cinquième candidat -->
+                    <div class="candidate-card" data-status="pending">
+                        <div class="candidate-status">En attente</div>
+                        <div class="card-top-section">
+                            <div class="candidate-image">
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cG9ydHJhaXQlMjBmZW1hbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" alt="Julie">
+                            </div>
+                            <div class="candidate-headline">
+                                <h3>Julie, 25 ans</h3>
+                                <p class="candidate-occupation">Professeure d'anglais</p>
+                                <div class="compatibility-score">
+                                    <div class="score-circle">
+                                        <span>65%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="candidate-details">
+                            <div class="detail-item">
+                                <i class="fas fa-school"></i>
+                                <span>Lycée International</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-euro-sign"></i>
+                                <span>Budget: 480€/mois</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Disponible dès le 1er juillet</span>
+                            </div>
+                        </div>
+                        <div class="candidate-bio">
+                            <p>"Sociable et dynamique, j'adore voyager et découvrir de nouvelles cultures. Je recherche une colocation internationale où l'on peut partager et échanger."</p>
+                        </div>
+                        <div class="candidate-actions">
+                            <button class="btn-secondary reject-btn">
+                                <i class="fas fa-times"></i> Décliner
+                            </button>
+                            <button class="btn-primary profile-btn">
+                                <i class="fas fa-user"></i> Voir profil
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-item" data-tab="dashboard">
+                <i class="fas fa-home"></i>
+                <span>Accueil</span>
+            </button>
+            <button class="nav-item active" data-tab="apartments">
+                <i class="fas fa-building"></i>
+                <span>Mes apparts</span>
+            </button>
+            <button class="nav-item" data-tab="messages">
+                <i class="fas fa-comments"></i>
+                <span>Messages</span>
+                <span class="badge">8</span>
+            </button>
+            <button class="nav-item" data-tab="profile">
+                <i class="fas fa-user"></i>
+                <span>Profil</span>
+            </button>
+        </nav>
+    </div>
+
+    <script src="js/apartment-candidates.js"></script>
+</body>
+</html> 

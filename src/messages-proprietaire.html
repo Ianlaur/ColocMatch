@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover, orientation=portrait">
+    <title>ColocMatch - Messagerie Propriétaire</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/owner-dashboard.css">
+    <link rel="stylesheet" href="css/messages-proprietaire.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header/Navigation -->
+        <header>
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-key"></i>
+                    <span>ColocMatch</span>
+                </div>
+                <div class="nav-buttons">
+                    <button class="notifications-btn" id="notificationsBtn">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </button>
+                    <div class="user-profile-header">
+                        <img src="20250429_2140_Jeune Homme Humain_simple_compose_01jt1h0tezf1avm9q9v81q1z6f.png" alt="Photo de profil" class="header-profile-img">
+                        <span class="header-profile-name">Mon profil</span>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Vue Liste des Conversations -->
+            <div class="conversations-view active" id="conversationsView">
+                <div class="conversations-header">
+                    <h2>Conversations</h2>
+                    <div class="search-container">
+                        <input type="text" placeholder="Rechercher..." class="search-input">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+                </div>
+                
+                <!-- Nouvelle section: Notifications de groupes -->
+                <div class="coloc-groups-section" id="colocGroupsSection">
+                    <div class="section-header">
+                        <h3>Groupes potentiels</h3>
+                        <span class="new-badge">2 nouveaux</span>
+                    </div>
+                    
+                    <div class="coloc-group-item new">
+                        <div class="group-members">
+                            <div class="member-avatars">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZSUyMHdvbWFufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="Sophie">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBvcnRyYWl0JTIwbWFsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Lucas">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHBvcnRyYWl0JTIwbWFsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Thomas">
+                            </div>
+                            <div class="group-info">
+                                <h4>Groupe de Sophie (3)</h4>
+                                <p>Pour: <strong>Appartement T4 - Croix-Rousse</strong></p>
+                                <span class="timestamp">aujourd'hui</span>
+                            </div>
+                        </div>
+                        <div class="group-actions">
+                            <button class="btn-approve" data-group="group-sophie">
+                                <i class="fas fa-check"></i>
+                            </button>
+                            <button class="btn-reject" data-group="group-sophie">
+                                <i class="fas fa-times"></i>
+                            </button>
+                            <button class="btn-chat" data-group="group-sophie">
+                                <i class="fas fa-comment"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="coloc-group-item new">
+                        <div class="group-members">
+                            <div class="member-avatars">
+                                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cG9ydHJhaXQlMjBmZW1hbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" alt="Marie">
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cG9ydHJhaXQlMjBmZW1hbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" alt="Julie">
+                            </div>
+                            <div class="group-info">
+                                <h4>Groupe de Marie (2)</h4>
+                                <p>Pour: <strong>Loft - Paris 20ème</strong></p>
+                                <span class="timestamp">hier</span>
+                            </div>
+                        </div>
+                        <div class="group-actions">
+                            <button class="btn-approve" data-group="group-marie">
+                                <i class="fas fa-check"></i>
+                            </button>
+                            <button class="btn-reject" data-group="group-marie">
+                                <i class="fas fa-times"></i>
+                            </button>
+                            <button class="btn-chat" data-group="group-marie">
+                                <i class="fas fa-comment"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="coloc-group-item">
+                        <div class="group-members">
+                            <div class="member-avatars">
+                                <img src="https://images.unsplash.com/photo-1519058082700-08a0b56da9b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHlvdW5nJTIwbWFufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="Alexandre">
+                                <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHlvdW5nJTIwd29tYW58ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" alt="Emma">
+                                <img src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHlvdW5nJTIwbWFufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="Maxime">
+                            </div>
+                            <div class="group-info">
+                                <h4>Groupe d'Alexandre (3)</h4>
+                                <p>Pour: <strong>Appartement T3 - Lyon Part-Dieu</strong></p>
+                                <p class="status-approved">Approuvé le 24/05</p>
+                            </div>
+                        </div>
+                        <div class="group-actions">
+                            <button class="btn-chat" data-group="group-alexandre">
+                                <i class="fas fa-comment"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="conversations-list">
+                    <div class="conversation-item" data-conversation="coloc-croix-rousse">
+                        <div class="group-avatar">
+                            <div class="avatar-stack">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZSUyMHdvbWFufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="Sophie">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBvcnRyYWl0JTIwbWFsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Lucas">
+                                <img src="20250429_2140_Jeune Homme Humain_simple_compose_01jt1h0tezf1avm9q9v81q1z6f.png" alt="Thomas">
+                            </div>
+                        </div>
+                        <div class="conversation-info">
+                            <div class="conversation-header">
+                                <h3>Coloc Croix-Rousse</h3>
+                                <span class="timestamp">14:25</span>
+                            </div>
+                            <p class="last-message">Sophie: Bonjour, nous avons une question concernant le bail...</p>
+                        </div>
+                        <div class="conversation-badge">
+                            <span>3</span>
+                        </div>
+                    </div>
+                    
+                    <div class="conversation-item" data-conversation="coloc-paris">
+                        <div class="group-avatar">
+                            <div class="avatar-stack">
+                                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cG9ydHJhaXQlMjBmZW1hbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" alt="Marie">
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cG9ydHJhaXQlMjBmZW1hbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" alt="Julie">
+                            </div>
+                        </div>
+                        <div class="conversation-info">
+                            <div class="conversation-header">
+                                <h3>Coloc Paris 20ème</h3>
+                                <span class="timestamp">Hier</span>
+                            </div>
+                            <p class="last-message">Vous: Merci pour le loyer, tout est bien reçu.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="conversation-item" data-conversation="pierre-candidat">
+                        <div class="group-avatar single">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBvcnRyYWl0JTIwbWFsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Pierre">
+                        </div>
+                        <div class="conversation-info">
+                            <div class="conversation-header">
+                                <h3>Pierre (candidat)</h3>
+                                <span class="timestamp">Lun</span>
+                            </div>
+                            <p class="last-message">Pierre: Est-ce que l'appartement est toujours disponible ?</p>
+                        </div>
+                        <div class="conversation-badge">
+                            <span>1</span>
+                        </div>
+                    </div>
+                    
+                    <div class="conversation-item" data-conversation="groupe-lyon-sud">
+                        <div class="group-avatar">
+                            <div class="avatar-stack">
+                                <img src="https://images.unsplash.com/photo-1519058082700-08a0b56da9b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHlvdW5nJTIwbWFufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="Alexandre">
+                                <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHlvdW5nJTIwd29tYW58ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" alt="Emma">
+                                <img src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHlvdW5nJTIwbWFufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="Maxime">
+                            </div>
+                        </div>
+                        <div class="conversation-info">
+                            <div class="conversation-header">
+                                <h3>Coloc Lyon Sud</h3>
+                                <span class="timestamp">23 mai</span>
+                            </div>
+                            <p class="last-message">Alexandre: Pour la chaudière, quand pourriez-vous intervenir ?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Vue Conversation -->
+            <div class="chat-view" id="chatView">
+                <div class="chat-header">
+                    <button class="back-btn" id="backToConversations">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <div class="chat-title">
+                        <h2>Coloc Croix-Rousse</h2>
+                        <p>Appartement T4 - Lyon, Croix-Rousse</p>
+                    </div>
+                    <div class="chat-actions">
+                        <button class="info-btn">
+                            <i class="fas fa-info-circle"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="chat-messages" id="chatMessages">
+                    <div class="date-separator">
+                        <span>Aujourd'hui</span>
+                    </div>
+                    
+                    <div class="message-group">
+                        <div class="message-avatar">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZSUyMHdvbWFufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="Sophie">
+                        </div>
+                        <div class="message-content">
+                            <div class="message-header">
+                                <h4>Sophie</h4>
+                                <span>10:15</span>
+                            </div>
+                            <div class="message-bubble">
+                                <p>Bonjour, nous avons une question concernant le bail. Est-ce que vous pourriez nous envoyer la version électronique pour que nous puissions la consulter avant de signer ?</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="message-group">
+                        <div class="message-avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBvcnRyYWl0JTIwbWFsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Lucas">
+                        </div>
+                        <div class="message-content">
+                            <div class="message-header">
+                                <h4>Lucas</h4>
+                                <span>10:18</span>
+                            </div>
+                            <div class="message-bubble">
+                                <p>On avait aussi des questions concernant les charges. Est-ce que l'eau est comprise ?</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="message-group own">
+                        <div class="message-content">
+                            <div class="message-header">
+                                <span>11:42</span>
+                                <h4>Vous</h4>
+                            </div>
+                            <div class="message-bubble">
+                                <p>Bonjour à tous. Bien sûr, je vais vous envoyer le bail par email dans l'après-midi.</p>
+                            </div>
+                            <div class="message-bubble">
+                                <p>Pour les charges, l'eau est bien comprise, ainsi que le chauffage. Seule l'électricité est à votre charge.</p>
+                            </div>
+                        </div>
+                        <div class="message-avatar">
+                            <img src="20250429_2140_Jeune Homme Humain_simple_compose_01jt1h0tezf1avm9q9v81q1z6f.png" alt="Vous">
+                        </div>
+                    </div>
+                    
+                    <div class="message-group">
+                        <div class="message-avatar">
+                            <img src="20250429_2140_Jeune Homme Humain_simple_compose_01jt1h0tezf1avm9q9v81q1z6f.png" alt="Thomas">
+                        </div>
+                        <div class="message-content">
+                            <div class="message-header">
+                                <h4>Thomas</h4>
+                                <span>14:03</span>
+                            </div>
+                            <div class="message-bubble">
+                                <p>Super, merci pour ces précisions !</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="message-group">
+                        <div class="message-avatar">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZSUyMHdvbWFufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="Sophie">
+                        </div>
+                        <div class="message-content">
+                            <div class="message-header">
+                                <h4>Sophie</h4>
+                                <span>14:25</span>
+                            </div>
+                            <div class="message-bubble">
+                                <p>Une dernière question : pour l'état des lieux, est-ce qu'on peut le faire le week-end du 24 ? Nous serions tous disponibles.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chat-input-area">
+                    <div class="attachment-btn">
+                        <i class="fas fa-paperclip"></i>
+                    </div>
+                    <div class="chat-input-container">
+                        <textarea class="chat-input" placeholder="Écrivez votre message..." rows="1"></textarea>
+                    </div>
+                    <div class="send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Informations sur les colocataires (panneau latéral) -->
+            <div class="roommates-info" id="roommatesInfo">
+                <div class="roommates-header">
+                    <h2>Colocataires</h2>
+                    <button class="close-info-btn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="apartment-details-card">
+                    <h3>Appartement</h3>
+                    <div class="apartment-image">
+                        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXBhcnRtZW50fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="Appartement lumineux">
+                    </div>
+                    <div class="apartment-info-details">
+                        <p><i class="fas fa-map-marker-alt"></i> Lyon, Croix-Rousse</p>
+                        <p><i class="fas fa-home"></i> T4 de 85m²</p>
+                        <p><i class="fas fa-euro-sign"></i> 450€/mois/pers</p>
+                        <p><i class="fas fa-calendar-check"></i> Début de bail: 01/06/2025</p>
+                    </div>
+                </div>
+                
+                <div class="roommates-list">
+                    <h3>Membres du groupe</h3>
+                    
+                    <div class="roommate-card">
+                        <div class="roommate-avatar">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZSUyMHdvbWFufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="Sophie">
+                        </div>
+                        <div class="roommate-info">
+                            <h4>Sophie, 24 ans</h4>
+                            <p>Étudiante en design</p>
+                            <div class="contact-actions">
+                                <button class="btn-contact">
+                                    <i class="fas fa-envelope"></i>
+                                </button>
+                                <button class="btn-contact">
+                                    <i class="fas fa-phone"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="roommate-card">
+                        <div class="roommate-avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBvcnRyYWl0JTIwbWFsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Lucas">
+                        </div>
+                        <div class="roommate-info">
+                            <h4>Lucas, 26 ans</h4>
+                            <p>Développeur web</p>
+                            <div class="contact-actions">
+                                <button class="btn-contact">
+                                    <i class="fas fa-envelope"></i>
+                                </button>
+                                <button class="btn-contact">
+                                    <i class="fas fa-phone"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="roommate-card">
+                        <div class="roommate-avatar">
+                            <img src="20250429_2140_Jeune Homme Humain_simple_compose_01jt1h0tezf1avm9q9v81q1z6f.png" alt="Thomas">
+                        </div>
+                        <div class="roommate-info">
+                            <h4>Thomas, 25 ans</h4>
+                            <p>Étudiant en médecine</p>
+                            <div class="contact-actions">
+                                <button class="btn-contact">
+                                    <i class="fas fa-envelope"></i>
+                                </button>
+                                <button class="btn-contact">
+                                    <i class="fas fa-phone"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="documents-section">
+                    <h3>Documents partagés</h3>
+                    <div class="document-item">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>Bail_Coloc_Croix_Rousse.pdf</span>
+                    </div>
+                    <div class="document-item">
+                        <i class="fas fa-file-image"></i>
+                        <span>Etat_des_lieux.jpg</span>
+                    </div>
+                    <div class="document-item">
+                        <i class="fas fa-file-contract"></i>
+                        <span>Reglement_interieur.pdf</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-item" data-tab="dashboard">
+                <i class="fas fa-home"></i>
+                <span>Accueil</span>
+            </button>
+            <button class="nav-item active" data-tab="messages">
+                <i class="fas fa-comments"></i>
+                <span>Messagerie</span>
+                <span class="badge">8</span>
+            </button>
+            <button class="nav-item" data-tab="profile">
+                <i class="fas fa-user"></i>
+                <span>Profil</span>
+            </button>
+        </nav>
+    </div>
+
+    <script src="js/messages-proprietaire.js"></script>
+</body>
+</html> 

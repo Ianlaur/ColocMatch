@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColocMatch - Type d'utilisateur</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/user-type.css">
+</head>
+<body>
+    <div class="user-type-container">
+        <header>
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-key"></i>
+                    <span>ColocMatch</span>
+                </div>
+                <div class="user-profile-header">
+                    <img src="20250429_2140_Jeune Homme Humain_simple_compose_01jt1h0tezf1avm9q9v81q1z6f.png" alt="Photo de profil" class="header-profile-img">
+                    <span class="header-profile-name">Mon profil</span>
+                </div>
+            </nav>
+        </header>
+        <div class="user-type-content">
+            <h1>Comment souhaitez-vous utiliser ColocMatch ?</h1>
+            <p class="subtitle">Sélectionnez une option pour continuer</p>
+            
+            <div class="user-type-options">
+                <div class="user-type-card seeker" id="seekerCard">
+                    <div class="card-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h2>Je cherche un logement</h2>
+                    <p>Découvrez des appartements et des colocataires potentiels</p>
+                    <button class="btn-select" id="seekerBtn">Sélectionner</button>
+                </div>
+                
+                <div class="user-type-card owner" id="ownerCard">
+                    <div class="card-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h2>J'ai un logement</h2>
+                    <p>Trouvez des colocataires pour votre appartement</p>
+                    <button class="btn-select" id="ownerBtn">Sélectionner</button>
+                </div>
+            </div>
+            
+            <p class="info-text">Vous pourrez changer de mode à tout moment dans les paramètres</p>
+        </div>
+    </div>
+
+    <script src="js/user-type.js"></script>
+</body>
+</html> 

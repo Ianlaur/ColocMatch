@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColocMatch - Mes favoris</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/favorites.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header/Navigation -->
+        <header>
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-key"></i>
+                    <span>ColocMatch</span>
+                </div>
+                <div class="nav-buttons">
+                    <button class="profile-btn" id="profileBtn">
+                        <img src="20250429_2140_Jeune Homme Humain_simple_compose_01jt1h0tezf1avm9q9v81q1z6f.png" alt="Profil" class="profile-icon">
+                    </button>
+                    <div class="user-profile-header">
+                        <img src="20250429_2140_Jeune Homme Humain_simple_compose_01jt1h0tezf1avm9q9v81q1z6f.png" alt="Photo de profil" class="header-profile-img">
+                        <span class="header-profile-name">Mon profil</span>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <section class="favorites-section">
+                <h1>Mes Favoris</h1>
+                <div class="favorites-tabs">
+                    <button class="favorites-tab active" data-tab="all">Tous</button>
+                    <button class="favorites-tab" data-tab="apartments">Appartements</button>
+                    <button class="favorites-tab" data-tab="roommates">Colocataires</button>
+                </div>
+
+                <div class="favorites-list" id="favoritesList">
+                    <!-- Les éléments favoris seront générés dynamiquement -->
+                    <div class="no-favorites hidden" id="noFavorites">
+                        <div class="empty-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Aucun favori pour le moment</h3>
+                        <p>Commencez à découvrir des logements et des colocataires en cliquant sur l'étoile pour les ajouter à vos favoris.</p>
+                        <button class="btn-primary" id="discoverBtn">
+                            Découvrir <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-item" data-tab="swipe">
+                <i class="fas fa-home"></i>
+                <span>Découvrir</span>
+            </button>
+            <button class="nav-item" data-tab="matches">
+                <i class="fas fa-comments"></i>
+                <span>Messages</span>
+                <span class="badge" id="messagesBadge">2</span>
+            </button>
+            <button class="nav-item active" data-tab="favorites">
+                <i class="fas fa-star"></i>
+                <span>Favoris</span>
+            </button>
+            <button class="nav-item" data-tab="profile">
+                <i class="fas fa-user"></i>
+                <span>Profil</span>
+            </button>
+        </nav>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/favorites.js"></script>
+</body>
+</html> 

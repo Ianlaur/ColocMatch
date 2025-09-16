@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColocMatch - Profil du candidat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/owner-dashboard.css">
+    <link rel="stylesheet" href="css/candidate-profile.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header/Navigation -->
+        <header>
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-key"></i>
+                    <span>ColocMatch</span>
+                </div>
+                <div class="nav-buttons">
+                    <button class="back-btn" id="backBtn">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <button class="notifications-btn" id="notificationsBtn">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </button>
+                    <div class="user-profile-header">
+                        <img src="20250429_2140_Jeune Homme Humain_simple_compose_01jt1h0tezf1avm9q9v81q1z6f.png" alt="Photo de profil" class="header-profile-img">
+                        <span class="header-profile-name">Mon profil</span>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Profil Header -->
+            <section class="profile-header-section">
+                <div class="profile-cover">
+                    <div class="gradient-overlay"></div>
+                </div>
+                <div class="profile-header-content">
+                    <div class="profile-image">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZSUyMHdvbWFufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="Sophie" id="profileImage">
+                    </div>
+                    <div class="profile-header-info">
+                        <h1 id="profileName" class="white-name">Sophie, 24 ans</h1>
+                        <p class="profile-occupation" id="profileOccupation">Étudiante en design</p>
+                    </div>
+                    <div class="compatibility-score">
+                        <div class="score-circle">
+                            <span id="compatibilityScore">92%</span>
+                        </div>
+                        <p>Compatibilité</p>
+                    </div>
+                </div>
+                <div class="profile-actions">
+                    <button class="btn-secondary reject-btn">
+                        <i class="fas fa-times"></i> Décliner la candidature
+                    </button>
+                    <button class="btn-primary message-btn">
+                        <i class="fas fa-comment"></i> Contacter
+                    </button>
+                </div>
+            </section>
+
+            <!-- Profile Content -->
+            <div class="profile-content">
+                <!-- Informations Principales -->
+                <section class="profile-section">
+                    <div class="section-header">
+                        <h2>Informations principales</h2>
+                    </div>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Études/Travail</h3>
+                                <p id="profileWork">École de Design</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-euro-sign"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Budget mensuel</h3>
+                                <p id="profileBudget">500€/mois</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Disponibilité</h3>
+                                <p id="profileAvailability">Disponible dès maintenant</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Durée du séjour</h3>
+                                <p id="profileDuration">1 an minimum</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- À propos -->
+                <section class="profile-section">
+                    <div class="section-header">
+                        <h2>À propos de moi</h2>
+                    </div>
+                    <div class="about-content">
+                        <p id="profileBio">
+                            "Je suis une personne calme, organisée et respectueuse. J'adore la décoration et la cuisine. Je cherche une colocation conviviale pour ma dernière année d'études. Originaire de Bordeaux, j'ai déménagé à Lyon pour mes études en design. Je suis passionnée d'art et de photographie. J'aime sortir de temps en temps mais j'apprécie aussi les soirées tranquilles à la maison."
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Préférences de colocation -->
+                <section class="profile-section">
+                    <div class="section-header">
+                        <h2>Préférences de colocation</h2>
+                    </div>
+                    <div class="preferences-grid">
+                        <div class="preference-item">
+                            <div class="preference-icon">
+                                <i class="fas fa-smoking-ban"></i>
+                            </div>
+                            <div class="preference-content">
+                                <h3>Tabac</h3>
+                                <p>Non-fumeur</p>
+                            </div>
+                        </div>
+                        <div class="preference-item">
+                            <div class="preference-icon">
+                                <i class="fas fa-paw"></i>
+                            </div>
+                            <div class="preference-content">
+                                <h3>Animaux</h3>
+                                <p>J'adore les animaux</p>
+                            </div>
+                        </div>
+                        <div class="preference-item">
+                            <div class="preference-icon">
+                                <i class="fas fa-glass-cheers"></i>
+                            </div>
+                            <div class="preference-content">
+                                <h3>Sorties</h3>
+                                <p>Occasionnelles</p>
+                            </div>
+                        </div>
+                        <div class="preference-item">
+                            <div class="preference-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="preference-content">
+                                <h3>Invités</h3>
+                                <p>Rarement</p>
+                            </div>
+                        </div>
+                        <div class="preference-item">
+                            <div class="preference-icon">
+                                <i class="fas fa-broom"></i>
+                            </div>
+                            <div class="preference-content">
+                                <h3>Ménage</h3>
+                                <p>Très organisée</p>
+                            </div>
+                        </div>
+                        <div class="preference-item">
+                            <div class="preference-icon">
+                                <i class="fas fa-moon"></i>
+                            </div>
+                            <div class="preference-content">
+                                <h3>Rythme de vie</h3>
+                                <p>Plutôt jour</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Centres d'intérêt -->
+                <section class="profile-section">
+                    <div class="section-header">
+                        <h2>Centres d'intérêt</h2>
+                    </div>
+                    <div class="interests-list">
+                        <span class="interest-tag">Design</span>
+                        <span class="interest-tag">Photographie</span>
+                        <span class="interest-tag">Cuisine</span>
+                        <span class="interest-tag">Lecture</span>
+                        <span class="interest-tag">Décoration</span>
+                        <span class="interest-tag">Randonnée</span>
+                        <span class="interest-tag">Art</span>
+                        <span class="interest-tag">Cinéma</span>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-item" data-tab="dashboard">
+                <i class="fas fa-home"></i>
+                <span>Accueil</span>
+            </button>
+            <button class="nav-item active" data-tab="apartments">
+                <i class="fas fa-building"></i>
+                <span>Mes apparts</span>
+            </button>
+            <button class="nav-item" data-tab="messages">
+                <i class="fas fa-comments"></i>
+                <span>Messages</span>
+                <span class="badge">8</span>
+            </button>
+            <button class="nav-item" data-tab="profile">
+                <i class="fas fa-user"></i>
+                <span>Profil</span>
+            </button>
+        </nav>
+    </div>
+
+    <script src="js/candidate-profile.js"></script>
+</body>
+</html> 

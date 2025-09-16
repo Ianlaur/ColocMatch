@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColocMatch - Trouve ton coloc idéal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header/Navigation -->
+        <header>
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-key"></i>
+                    <span>ColocMatch</span>
+                </div>
+                <div class="nav-buttons">
+                    <button class="filter-btn" id="filterBtn">
+                        <i class="fas fa-sliders-h"></i>
+                    </button>
+                    <button class="profile-btn" id="profileBtn">
+                        <img src="20250429_2140_Jeune Homme Humain_simple_compose_01jt1h0tezf1avm9q9v81q1z6f.png" alt="Profil" class="profile-icon">
+                    </button>
+                    <div class="user-profile-header">
+                        <img src="20250429_2140_Jeune Homme Humain_simple_compose_01jt1h0tezf1avm9q9v81q1z6f.png" alt="Photo de profil" class="header-profile-img">
+                        <span class="header-profile-name">Mon profil</span>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Swipe Section -->
+            <section class="swipe-section">
+                <div class="swipe-header">
+                    <h1 id="swipeTitle">Découvre des logements</h1>
+                    <p id="swipeSubtitle">Swipe à droite pour les logements qui t'intéressent</p>
+                </div>
+                <div class="card-stack" id="cardStack">
+                    <!-- Cards will be dynamically generated here -->
+                </div>
+                <div class="swipe-buttons">
+                    <button class="swipe-btn reject" id="rejectBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <button class="swipe-btn info" id="infoBtn">
+                        <i class="fas fa-info"></i>
+                    </button>
+                    <button class="swipe-btn like" id="likeBtn">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Match Modal -->
+            <div class="match-modal" id="matchModal">
+                <div class="match-content">
+                    <div class="match-header">
+                        <h2>C'est un match!</h2>
+                        <p>Vous et <span id="matchName"></span> avez des atomes crochus!</p>
+                    </div>
+                    <div class="match-profile">
+                        <div class="match-profile-img">
+                            <img id="userImg" src="" alt="Votre photo">
+                        </div>
+                        <div class="match-hearts">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="match-profile-img">
+                            <img id="matchImg" src="" alt="Photo du match">
+                        </div>
+                    </div>
+                    <div class="match-actions">
+                        <button class="btn-secondary" id="keepSwipingBtn">Continuer à swiper</button>
+                        <button class="btn-primary" id="sendMessageBtn">Envoyer un message</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter Modal -->
+            <div class="filter-modal" id="filterModal">
+                <div class="filter-content">
+                    <div class="filter-header">
+                        <h2>Filtres</h2>
+                        <button class="close-btn" id="closeFilterBtn">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="filter-body">
+                        <div class="filter-section">
+                            <h3>Budget</h3>
+                            <div class="range-slider">
+                                <div class="range-values">
+                                    <span id="minBudget">300€</span>
+                                    <span id="maxBudget">1200€</span>
+                                </div>
+                                <div class="slider-container">
+                                    <input type="range" id="budgetMin" min="300" max="1200" value="300" class="slider">
+                                    <input type="range" id="budgetMax" min="300" max="1200" value="1200" class="slider">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-section">
+                            <h3>Quartier</h3>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked> Centre-ville
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked> Proche campus
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Périphérie
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Banlieue
+                                </label>
+                            </div>
+                        </div>
+                        <div class="filter-section">
+                            <h3>Type de logement</h3>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked> Appartement
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked> Maison
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked> Studio
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Résidence
+                                </label>
+                            </div>
+                        </div>
+                        <div class="filter-section">
+                            <h3>Préférences colocataires</h3>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked> Étudiant
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked> Jeune actif
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Non-fumeur uniquement
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-actions">
+                        <button class="btn-secondary" id="resetFilterBtn">Réinitialiser</button>
+                        <button class="btn-primary" id="applyFilterBtn">Appliquer</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Detail Modal -->
+            <div class="detail-modal" id="detailModal">
+                <div class="detail-content">
+                    <button class="close-btn" id="closeDetailBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="detail-images">
+                        <div class="image-slider" id="imageSlider">
+                            <!-- Images will be added dynamically -->
+                        </div>
+                        <div class="slider-nav">
+                            <button class="slider-btn prev" id="prevImageBtn">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <div class="slider-dots" id="sliderDots">
+                                <!-- Dots will be added dynamically -->
+                            </div>
+                            <button class="slider-btn next" id="nextImageBtn">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="detail-info">
+                        <div class="detail-header">
+                            <h2 id="detailName">Nom du profil</h2>
+                            <p id="detailLocation">Lieu</p>
+                        </div>
+                        <div class="detail-body">
+                            <div class="detail-stats">
+                                <div class="stat-item">
+                                    <i class="fas fa-home"></i>
+                                    <p id="detailType">Type de logement</p>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-euro-sign"></i>
+                                    <p id="detailBudget">Budget</p>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <p id="detailAvailability">Disponibilité</p>
+                                </div>
+                            </div>
+                            <div class="detail-description">
+                                <h3>À propos</h3>
+                                <p id="detailDescription">Description du profil</p>
+                            </div>
+                            <div class="detail-preferences">
+                                <h3>Préférences</h3>
+                                <div class="tag-container" id="detailPreferences">
+                                    <!-- Tags will be added dynamically -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="detail-actions">
+                            <button class="btn-secondary" id="detailRejectBtn">
+                                <i class="fas fa-times"></i> Pas intéressé
+                            </button>
+                            <button class="btn-primary" id="detailLikeBtn">
+                                <i class="fas fa-heart"></i> Ça me plaît
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-item active" data-tab="swipe">
+                <i class="fas fa-home"></i>
+                <span>Découvrir</span>
+            </button>
+            <button class="nav-item" data-tab="matches">
+                <i class="fas fa-comments"></i>
+                <span>Messages</span>
+                <span class="badge" id="messagesBadge">2</span>
+            </button>
+            <button class="nav-item" data-tab="favorites">
+                <i class="fas fa-star"></i>
+                <span>Favoris</span>
+            </button>
+            <button class="nav-item" data-tab="profile">
+                <i class="fas fa-user"></i>
+                <span>Profil</span>
+            </button>
+        </nav>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    
+    <!-- Script pour mettre à jour le titre en fonction du type d'utilisateur -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Récupérer le type d'utilisateur
+            const userType = localStorage.getItem('userType') || 'seeker';
+            
+            // Mettre à jour le titre et le sous-titre
+            const swipeTitle = document.getElementById('swipeTitle');
+            const swipeSubtitle = document.getElementById('swipeSubtitle');
+            
+            if (userType === 'seeker') {
+                swipeTitle.textContent = 'Découvre des logements';
+                swipeSubtitle.textContent = 'Swipe à droite pour les logements qui t\'intéressent';
+            } else if (userType === 'owner') {
+                swipeTitle.textContent = 'Découvre des colocataires';
+                swipeSubtitle.textContent = 'Swipe à droite pour les colocataires qui t\'intéressent';
+            }
+        });
+    </script>
+</body>
+</html> 

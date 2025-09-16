@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColocMatch - Colocataires potentiels</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/colocs-matching.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header/Navigation -->
+        <header>
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-key"></i>
+                    <span>ColocMatch</span>
+                </div>
+                <div class="nav-buttons">
+                    <button class="back-btn" id="backBtn">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <button class="profile-btn" id="profileBtn">
+                        <img src="20250429_2140_Jeune Homme Humain_simple_compose_01jt1h0tezf1avm9q9v81q1z6f.png" alt="Profil" class="profile-icon">
+                    </button>
+                    <div class="user-profile-header">
+                        <img src="20250429_2140_Jeune Homme Humain_simple_compose_01jt1h0tezf1avm9q9v81q1z6f.png" alt="Photo de profil" class="header-profile-img">
+                        <span class="header-profile-name">Mon profil</span>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Apartment Info Section -->
+            <section class="apartment-info-section">
+                <div class="apartment-header">
+                    <div class="apartment-image">
+                        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXBhcnRtZW50fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="Appartement lumineux">
+                        <button class="favorite-btn active" id="apartmentFavoriteBtn">
+                            <i class="fas fa-star"></i>
+                        </button>
+                    </div>
+                    <div class="apartment-details">
+                        <h1>Appartement lumineux</h1>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Lyon, Croix-Rousse</p>
+                        <div class="info-tags">
+                            <div class="info-tag">
+                                <i class="fas fa-home"></i>
+                                T4 de 85m²
+                            </div>
+                            <div class="info-tag">
+                                <i class="fas fa-euro-sign"></i>
+                                450€/mois/pers
+                            </div>
+                            <div class="info-tag">
+                                <i class="fas fa-user"></i>
+                                2 places dispo
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="apartment-description">
+                    <h2>À propos de cet appartement</h2>
+                    <p>Magnifique T4 de 85m² dans le quartier de la Croix-Rousse à Lyon. Recherche 2 nouveaux colocataires pour rejoindre Maxime (28 ans, ingénieur). Appartement entièrement meublé avec cuisine équipée et grand salon. Chaque chambre fait environ 12m². Charges comprises (eau, électricité, internet fibre).</p>
+                </div>
+            </section>
+
+            <!-- Potential Roommates Section -->
+            <section class="roommates-section">
+                <div class="section-header">
+                    <h2>Colocataires potentiels</h2>
+                    <p class="section-description">Ces personnes ont aussi liké cet appartement. Faites swiper pour trouver vos colocataires idéaux !</p>
+                </div>
+
+                <!-- Swipe Cards Container -->
+                <div class="swipe-container">
+                    <div class="card-stack" id="cardStack">
+                        <!-- Les cartes seront générées dynamiquement ici -->
+                    </div>
+                    
+                    <div class="swipe-overlay" id="likeOverlay">
+                        <div class="swipe-badge like-badge">
+                            <i class="fas fa-check"></i>
+                            LIKE
+                        </div>
+                    </div>
+                    
+                    <div class="swipe-overlay" id="nopeOverlay">
+                        <div class="swipe-badge nope-badge">
+                            <i class="fas fa-times"></i>
+                            NOPE
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swipe-buttons">
+                    <button class="swipe-btn reject" id="rejectBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <button class="swipe-btn info" id="infoBtn">
+                        <i class="fas fa-info"></i>
+                    </button>
+                    <button class="swipe-btn like" id="likeBtn">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                </div>
+
+                <div class="swipe-empty hidden" id="emptyState">
+                    <div class="empty-icon">
+                        <i class="fas fa-users-slash"></i>
+                    </div>
+                    <h3>Plus de colocataires potentiels</h3>
+                    <p>Nous avons parcouru tous les profils intéressés par cet appartement.</p>
+                    <button class="btn-primary" id="viewMatchesBtn">
+                        Voir mes matches <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </section>
+            
+            <!-- Match Modal -->
+            <div class="match-modal" id="matchModal">
+                <div class="match-content">
+                    <div class="match-header">
+                        <h2>C'est un match!</h2>
+                        <p>Vous et <span id="matchName">Sophie</span> êtes intéressés l'un par l'autre!</p>
+                    </div>
+                    <div class="match-profile">
+                        <div class="match-profile-img">
+                            <img id="userImg" src="20250429_2140_Jeune Homme Humain_simple_compose_01jt1h0tezf1avm9q9v81q1z6f.png" alt="Votre photo">
+                        </div>
+                        <div class="match-hearts">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="match-profile-img">
+                            <img id="matchImg" src="beautiful-woman-street.jpg" alt="Photo du match">
+                        </div>
+                    </div>
+                    <div class="match-apartment">
+                        <p>Vous avez tous les deux liké</p>
+                        <div class="apartment-badge">
+                            <i class="fas fa-home"></i>
+                            <span>Appartement lumineux - Lyon, Croix-Rousse</span>
+                        </div>
+                    </div>
+                    <div class="match-actions">
+                        <button class="btn-secondary" id="keepSwipingBtn">Continuer à swiper</button>
+                        <button class="btn-primary" id="sendMessageBtn">Envoyer un message</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Profile Detail Modal -->
+            <div class="detail-modal" id="detailModal">
+                <div class="detail-content">
+                    <button class="close-btn" id="closeDetailBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="detail-images">
+                        <div class="image-slider" id="imageSlider">
+                            <!-- Images will be added dynamically -->
+                        </div>
+                        <div class="slider-nav">
+                            <button class="slider-btn prev" id="prevImageBtn">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <div class="slider-dots" id="sliderDots">
+                                <!-- Dots will be added dynamically -->
+                            </div>
+                            <button class="slider-btn next" id="nextImageBtn">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="detail-info">
+                        <div class="detail-header">
+                            <h2 id="detailName">Sophie, 24 ans</h2>
+                            <div class="occupation" id="detailOccupation">Étudiante en design</div>
+                            <p id="detailLocation">Paris, 11ème</p>
+                        </div>
+                        <div class="detail-stats">
+                            <div class="compatibility-meter">
+                                <div class="meter-label">Compatibilité</div>
+                                <div class="meter">
+                                    <div class="meter-fill" id="compatibilityMeter" style="width: 92%"></div>
+                                </div>
+                                <div class="meter-value" id="compatibilityValue">92%</div>
+                            </div>
+                        </div>
+                        <div class="detail-body">
+                            <div class="detail-description">
+                                <h3>À propos</h3>
+                                <p id="detailDescription">Bonjour ! Je suis Sophie, étudiante en dernière année de master en design graphique. Je cherche une colocation sympa dans Paris. J'aime cuisiner, les soirées films et les expos. Je suis calme en semaine mais j'aime aussi sortir le weekend. Je m'adapte facilement et j'ai déjà vécu en coloc pendant 3 ans !</p>
+                            </div>
+                            <div class="detail-preferences">
+                                <h3>Préférences</h3>
+                                <div class="tag-container" id="detailPreferences">
+                                    <div class="tag">Calme</div>
+                                    <div class="tag">Créative</div>
+                                    <div class="tag">Non-fumeuse</div>
+                                    <div class="tag">Chat friendly</div>
+                                    <div class="tag">Quartier vivant</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="detail-actions">
+                            <button class="btn-secondary" id="detailRejectBtn">
+                                <i class="fas fa-times"></i> Pas intéressé
+                            </button>
+                            <button class="btn-primary" id="detailLikeBtn">
+                                <i class="fas fa-heart"></i> Ça me plaît
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-item" data-tab="swipe">
+                <i class="fas fa-home"></i>
+                <span>Découvrir</span>
+            </button>
+            <button class="nav-item active" data-tab="matches">
+                <i class="fas fa-users"></i>
+                <span>Colocs</span>
+            </button>
+            <button class="nav-item" data-tab="messages">
+                <i class="fas fa-comments"></i>
+                <span>Messages</span>
+                <span class="badge">2</span>
+            </button>
+            <button class="nav-item" data-tab="profile">
+                <i class="fas fa-user"></i>
+                <span>Profil</span>
+            </button>
+        </nav>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/colocs-matching.js"></script>
+</body>
+</html> 

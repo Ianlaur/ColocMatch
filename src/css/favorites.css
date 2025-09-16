@@ -1,0 +1,232 @@
+/* Styles pour la page de favoris */
+
+.favorites-section {
+    padding: 15px 0;
+}
+
+.favorites-section h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    padding: 0 15px;
+}
+
+/* Tabs de navigation */
+.favorites-tabs {
+    display: flex;
+    padding: 0 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--gray);
+}
+
+.favorites-tab {
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--light-text);
+    border-bottom: 2px solid transparent;
+    transition: var(--transition);
+}
+
+.favorites-tab.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+/* Liste des favoris */
+.favorites-list {
+    padding: 0 15px;
+}
+
+.favorite-item {
+    background-color: white;
+    border-radius: var(--rounded);
+    box-shadow: var(--shadow);
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.favorite-item:hover {
+    transform: translateY(-3px);
+}
+
+.favorite-header {
+    position: relative;
+}
+
+.favorite-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.favorite-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.favorite-badge i {
+    font-size: 12px;
+}
+
+.favorite-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+.favorite-action-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.favorite-action-btn:hover {
+    background-color: white;
+}
+
+.favorite-action-btn.remove {
+    color: gold;
+}
+
+.favorite-content {
+    padding: 15px;
+}
+
+.favorite-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.favorite-subtitle {
+    color: var(--light-text);
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.favorite-subtitle i {
+    color: var(--primary-color);
+}
+
+.favorite-details {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.favorite-detail {
+    font-size: 13px;
+    color: var(--light-text);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.favorite-detail i {
+    color: var(--primary-color);
+}
+
+.favorite-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--gray);
+    padding-top: 15px;
+}
+
+.compatibility {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.compatibility-meter {
+    width: 60px;
+    height: 6px;
+    background-color: var(--gray);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.compatibility-fill {
+    height: 100%;
+    background: var(--gradient);
+    border-radius: 3px;
+}
+
+.compatibility-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.favorite-btn {
+    padding: 8px 15px;
+    font-size: 14px;
+}
+
+/* État vide */
+.no-favorites {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.empty-icon {
+    font-size: 40px;
+    color: var(--light-text);
+    margin-bottom: 15px;
+}
+
+.no-favorites h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.no-favorites p {
+    color: var(--light-text);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Style pour l'icône de profil */
+.profile-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+}
+
+.profile-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+} 

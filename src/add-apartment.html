@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColocMatch - Ajouter un appartement</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/add-apartment.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header/Navigation -->
+        <header>
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-key"></i>
+                    <span>ColocMatch</span>
+                </div>
+                <div class="nav-buttons">
+                    <button class="back-btn" id="backBtn">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <div class="user-profile-header">
+                        <img src="20250429_2140_Jeune Homme Humain_simple_compose_01jt1h0tezf1avm9q9v81q1z6f.png" alt="Photo de profil" class="header-profile-img">
+                        <span class="header-profile-name">Mon profil</span>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <div class="add-apartment-container">
+                <div class="page-header">
+                    <h1>Ajouter mon appartement</h1>
+                    <p class="subtitle">Décrivez votre appartement de manière détaillée pour attirer les meilleurs colocataires</p>
+                </div>
+
+                <!-- Progress Indicator -->
+                <div class="progress-indicator">
+                    <div class="progress-step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <span class="step-label">Infos générales</span>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="2">
+                        <div class="step-number">2</div>
+                        <span class="step-label">Photos</span>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="3">
+                        <div class="step-number">3</div>
+                        <span class="step-label">Détails</span>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="4">
+                        <div class="step-number">4</div>
+                        <span class="step-label">Préférences</span>
+                    </div>
+                </div>
+
+                <!-- Multi-step Form -->
+                <form id="addApartmentForm" class="apartment-form">
+                    <!-- Step 1: General Information -->
+                    <div class="form-step active" id="step1">
+                        <h2>Informations générales</h2>
+                        
+                        <div class="form-group">
+                            <label for="apartmentTitle">Titre de l'annonce*</label>
+                            <input type="text" id="apartmentTitle" placeholder="Ex: Bel appartement lumineux au centre-ville" required>
+                            <p class="field-tip">Un titre accrocheur augmente vos chances d'attirer des colocataires</p>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="apartmentType">Type de logement*</label>
+                                <select id="apartmentType" required>
+                                    <option value="" disabled selected>Sélectionnez</option>
+                                    <option value="T1">T1 / Studio</option>
+                                    <option value="T2">T2</option>
+                                    <option value="T3">T3</option>
+                                    <option value="T4">T4</option>
+                                    <option value="T5+">T5 et plus</option>
+                                    <option value="Maison">Maison</option>
+                                    <option value="Loft">Loft</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="apartmentSize">Surface (m²)*</label>
+                                <input type="number" id="apartmentSize" placeholder="Ex: 75" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="apartmentRooms">Nombre de chambres*</label>
+                                <input type="number" id="apartmentRooms" placeholder="Ex: 3" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="apartmentAvailable">Places disponibles*</label>
+                                <input type="number" id="apartmentAvailable" placeholder="Ex: 2" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="apartmentPrice">Loyer total (€)*</label>
+                                <input type="number" id="apartmentPrice" placeholder="Ex: 1200" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="apartmentPricePerPerson">Loyer/personne (€)*</label>
+                                <input type="number" id="apartmentPricePerPerson" placeholder="Ex: 400" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="apartmentAddress">Adresse*</label>
+                            <input type="text" id="apartmentAddress" placeholder="Numéro, rue" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="apartmentZip">Code postal*</label>
+                                <input type="text" id="apartmentZip" placeholder="Ex: 75011" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="apartmentCity">Ville*</label>
+                                <input type="text" id="apartmentCity" placeholder="Ex: Paris" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="apartmentDistrict">Quartier</label>
+                            <input type="text" id="apartmentDistrict" placeholder="Ex: Montmartre">
+                            <p class="field-tip">Préciser le quartier aide les colocataires à mieux situer votre logement</p>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary" id="cancelBtn">Annuler</button>
+                            <button type="button" class="btn-primary next-btn" data-next="2">Suivant: Photos</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2: Photos -->
+                    <div class="form-step" id="step2">
+                        <h2>Photos de l'appartement</h2>
+                        <p class="photos-tip">Ajoutez des photos de qualité pour chaque pièce de votre appartement. Des photos claires et bien éclairées augmentent considérablement vos chances de trouver des colocataires.</p>
+                        
+                        <div class="room-photos-container">
+                            <div class="room-section">
+                                <h3>Photo principale</h3>
+                                <p>Cette photo apparaitra en premier dans votre annonce</p>
+                                <div class="photo-upload-container main-photo">
+                                    <div class="photo-upload">
+                                        <input type="file" id="mainPhotoUpload" accept="image/*">
+                                        <div class="upload-placeholder">
+                                            <i class="fas fa-image"></i>
+                                            <span>Ajouter la photo principale</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="room-section">
+                                <h3>Salon</h3>
+                                <div class="photo-upload-container">
+                                    <div class="photo-upload">
+                                        <input type="file" id="livingRoomUpload1" accept="image/*">
+                                        <div class="upload-placeholder">
+                                            <i class="fas fa-plus"></i>
+                                            <span>Ajouter</span>
+                                        </div>
+                                    </div>
+                                    <div class="photo-upload">
+                                        <input type="file" id="livingRoomUpload2" accept="image/*">
+                                        <div class="upload-placeholder">
+                                            <i class="fas fa-plus"></i>
+                                            <span>Ajouter</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="room-section">
+                                <h3>Cuisine</h3>
+                                <div class="photo-upload-container">
+                                    <div class="photo-upload">
+                                        <input type="file" id="kitchenUpload1" accept="image/*">
+                                        <div class="upload-placeholder">
+                                            <i class="fas fa-plus"></i>
+                                            <span>Ajouter</span>
+                                        </div>
+                                    </div>
+                                    <div class="photo-upload">
+                                        <input type="file" id="kitchenUpload2" accept="image/*">
+                                        <div class="upload-placeholder">
+                                            <i class="fas fa-plus"></i>
+                                            <span>Ajouter</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="room-section">
+                                <h3>Chambres</h3>
+                                <div class="photo-upload-container">
+                                    <div class="photo-upload">
+                                        <input type="file" id="bedroomUpload1" accept="image/*">
+                                        <div class="upload-placeholder">
+                                            <i class="fas fa-plus"></i>
+                                            <span>Chambre 1</span>
+                                        </div>
+                                    </div>
+                                    <div class="photo-upload">
+                                        <input type="file" id="bedroomUpload2" accept="image/*">
+                                        <div class="upload-placeholder">
+                                            <i class="fas fa-plus"></i>
+                                            <span>Chambre 2</span>
+                                        </div>
+                                    </div>
+                                    <div class="photo-upload">
+                                        <input type="file" id="bedroomUpload3" accept="image/*">
+                                        <div class="upload-placeholder">
+                                            <i class="fas fa-plus"></i>
+                                            <span>Chambre 3</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="room-section">
+                                <h3>Salle(s) de bain</h3>
+                                <div class="photo-upload-container">
+                                    <div class="photo-upload">
+                                        <input type="file" id="bathroomUpload1" accept="image/*">
+                                        <div class="upload-placeholder">
+                                            <i class="fas fa-plus"></i>
+                                            <span>Salle de bain 1</span>
+                                        </div>
+                                    </div>
+                                    <div class="photo-upload">
+                                        <input type="file" id="bathroomUpload2" accept="image/*">
+                                        <div class="upload-placeholder">
+                                            <i class="fas fa-plus"></i>
+                                            <span>Salle de bain 2</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="room-section">
+                                <h3>Autres espaces</h3>
+                                <div class="photo-upload-container">
+                                    <div class="photo-upload">
+                                        <input type="file" id="otherUpload1" accept="image/*">
+                                        <div class="upload-placeholder">
+                                            <i class="fas fa-plus"></i>
+                                            <span>Balcon/Terrasse</span>
+                                        </div>
+                                    </div>
+                                    <div class="photo-upload">
+                                        <input type="file" id="otherUpload2" accept="image/*">
+                                        <div class="upload-placeholder">
+                                            <i class="fas fa-plus"></i>
+                                            <span>Autre espace</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary prev-btn" data-prev="1">Précédent</button>
+                            <button type="button" class="btn-primary next-btn" data-next="3">Suivant: Détails</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3: Details -->
+                    <div class="form-step" id="step3">
+                        <h2>Détails de l'appartement</h2>
+                        
+                        <div class="form-group">
+                            <label for="apartmentDescription">Description de l'appartement*</label>
+                            <textarea id="apartmentDescription" rows="6" placeholder="Décrivez votre logement, ses atouts, l'ambiance, le quartier..." required></textarea>
+                            <p class="field-tip">Une description détaillée aide les potentiels colocataires à se projeter dans le logement</p>
+                        </div>
+                        
+                        <div class="form-section">
+                            <h3>Équipements</h3>
+                            <div class="checkbox-grid">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="furnished">
+                                    <span>Meublé</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="wifi">
+                                    <span>WiFi/Internet</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="washing-machine">
+                                    <span>Lave-linge</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="dishwasher">
+                                    <span>Lave-vaisselle</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="ac">
+                                    <span>Climatisation</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="tv">
+                                    <span>Télévision</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="parking">
+                                    <span>Parking</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="elevator">
+                                    <span>Ascenseur</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="balcony">
+                                    <span>Balcon/Terrasse</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="garden">
+                                    <span>Jardin</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-section">
+                            <h3>Charges incluses</h3>
+                            <div class="checkbox-grid">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="water">
+                                    <span>Eau</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="electricity">
+                                    <span>Électricité</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="gas">
+                                    <span>Gaz</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="heating">
+                                    <span>Chauffage</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="internet">
+                                    <span>Internet</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary prev-btn" data-prev="2">Précédent</button>
+                            <button type="button" class="btn-primary next-btn" data-next="4">Suivant: Préférences</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4: Preferences -->
+                    <div class="form-step" id="step4">
+                        <h2>Préférences colocataires</h2>
+                        <p class="preferences-tip">Définissez le profil idéal des colocataires que vous recherchez pour cet appartement.</p>
+                        
+                        <div class="form-section">
+                            <h3>Profil des colocataires</h3>
+                            <div class="checkbox-grid">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="student">
+                                    <span>Étudiant(e)s</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="young-professional">
+                                    <span>Jeunes actifs</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="professionals">
+                                    <span>Professionnels</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="female-only">
+                                    <span>Femmes uniquement</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="male-only">
+                                    <span>Hommes uniquement</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="couple-ok">
+                                    <span>Couples acceptés</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-section">
+                            <h3>Mode de vie</h3>
+                            <div class="checkbox-grid">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="no-smoking">
+                                    <span>Non-fumeur</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="pet-friendly">
+                                    <span>Animaux acceptés</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="clean">
+                                    <span>Ordonné(e)</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="quiet">
+                                    <span>Calme</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="social">
+                                    <span>Sociable</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="apartmentAvailabilityDate">Date de disponibilité*</label>
+                            <input type="date" id="apartmentAvailabilityDate" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="additionalPreferences">Autres précisions sur vos attentes</label>
+                            <textarea id="additionalPreferences" rows="4" placeholder="Partagez vos attentes concernant la vie en colocation, les règles de vie commune, etc."></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary prev-btn" data-prev="3">Précédent</button>
+                            <button type="submit" class="btn-primary submit-btn">Publier mon annonce</button>
+                        </div>
+                    </div>
+                </form>
+                
+                <!-- Success Message (hidden by default) -->
+                <div class="success-message" id="successMessage">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h2>Annonce publiée avec succès !</h2>
+                    <p>Votre appartement est maintenant visible pour les potentiels colocataires.</p>
+                    <div class="success-actions">
+                        <button class="btn-secondary" id="viewAptsBtn">Voir mes appartements</button>
+                        <button class="btn-primary" id="viewAnnonceBtn">Voir mon annonce</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-item" data-tab="dashboard">
+                <i class="fas fa-home"></i>
+                <span>Accueil</span>
+            </button>
+            <button class="nav-item active" data-tab="apartments">
+                <i class="fas fa-building"></i>
+                <span>Mes apparts</span>
+            </button>
+            <button class="nav-item" data-tab="messages">
+                <i class="fas fa-comments"></i>
+                <span>Messages</span>
+                <span class="badge">8</span>
+            </button>
+            <button class="nav-item" data-tab="profile">
+                <i class="fas fa-user"></i>
+                <span>Profil</span>
+            </button>
+        </nav>
+    </div>
+
+    <script src="js/add-apartment.js"></script>
+</body>
+</html> 

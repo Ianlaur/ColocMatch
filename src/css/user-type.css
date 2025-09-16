@@ -1,0 +1,193 @@
+/* Styles pour la page de choix de type d'utilisateur */
+.user-type-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.user-type-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.user-type-content h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.3;
+    color: var(--text-color);
+}
+
+.subtitle {
+    font-size: 16px;
+    color: var(--light-text);
+    margin-bottom: 40px;
+}
+
+.user-type-options {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.user-type-card {
+    flex: 1;
+    background-color: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.user-type-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.user-type-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--gradient);
+}
+
+.user-type-card.seeker::before {
+    background: linear-gradient(135deg, #FF385C, #FF7676);
+}
+
+.user-type-card.owner::before {
+    background: linear-gradient(135deg, #00B9BC, #00D8DB);
+}
+
+.card-icon {
+    font-size: 40px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    background-color: rgba(255, 56, 92, 0.1);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seeker .card-icon {
+    color: #FF385C;
+    background-color: rgba(255, 56, 92, 0.1);
+}
+
+.owner .card-icon {
+    color: #00B9BC;
+    background-color: rgba(0, 185, 188, 0.1);
+}
+
+.user-type-card h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.user-type-card p {
+    color: var(--light-text);
+    margin-bottom: 30px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.btn-select {
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.seeker .btn-select {
+    background: linear-gradient(135deg, #FF385C, #FF7676);
+    color: white;
+}
+
+.owner .btn-select {
+    background: linear-gradient(135deg, #00B9BC, #00D8DB);
+    color: white;
+}
+
+.btn-select:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.info-text {
+    text-align: center;
+    color: var(--light-text);
+    font-size: 14px;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+/* Animation de pulsation pour les cartes */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        box-shadow: 0 5px 20px rgba(255, 56, 92, 0.25);
+    }
+    100% {
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.card-highlight {
+    animation: pulse 2s infinite;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .user-type-options {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .user-type-card {
+        max-width: 450px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .user-type-content h1 {
+        font-size: 24px;
+    }
+    
+    .subtitle {
+        font-size: 14px;
+    }
+    
+    .user-type-card h2 {
+        font-size: 20px;
+    }
+} 

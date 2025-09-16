@@ -1,0 +1,652 @@
+/* Styles pour la page de matching de colocataires */
+
+/* Structure principale */
+main {
+    padding: 15px;
+    background-color: var(--light-bg);
+}
+
+section {
+    background-color: var(--white);
+    border-radius: var(--rounded);
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+/* Bouton retour */
+.back-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    font-size: 18px;
+    color: var(--dark-gray);
+    background-color: var(--gray);
+}
+
+.back-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Section d'information sur l'appartement */
+.apartment-info-section {
+    padding: 0;
+    overflow: hidden;
+}
+
+.apartment-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.apartment-image {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.apartment-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    image-rendering: auto;
+    transition: transform 0.3s ease;
+}
+
+.apartment-image:hover img {
+    transform: scale(1.05);
+}
+
+.apartment-details {
+    padding: 15px;
+}
+
+.apartment-details h1 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.location {
+    color: var(--light-text);
+    font-size: 14px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.location i {
+    color: var(--primary-color);
+}
+
+.info-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.info-tag {
+    background-color: var(--light-bg);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.info-tag i {
+    color: var(--primary-color);
+}
+
+.apartment-description {
+    padding: 0 15px 15px 15px;
+    border-top: 1px solid var(--gray);
+    margin-top: 10px;
+    padding-top: 15px;
+}
+
+.apartment-description h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.apartment-description p {
+    font-size: 14px;
+    color: var(--light-text);
+    line-height: 1.5;
+}
+
+/* Section des colocataires */
+.roommates-section {
+    padding: 15px;
+}
+
+.section-header {
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.section-description {
+    font-size: 14px;
+    color: var(--light-text);
+}
+
+/* Swipe Container */
+.swipe-container {
+    width: 100%;
+    height: 420px;
+    position: relative;
+    margin-bottom: 20px;
+    perspective: 1000px;
+}
+
+.card-stack {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: var(--rounded);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: grab;
+}
+
+.card.swiped-left {
+    transform: translateX(-150%) rotate(-30deg);
+    opacity: 0;
+}
+
+.card.swiped-right {
+    transform: translateX(150%) rotate(30deg);
+    opacity: 0;
+}
+
+.card-image {
+    height: 65%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center top;
+    image-rendering: auto;
+    border-bottom: 1px solid #eee;
+}
+
+.card-info {
+    padding: 15px;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.name-location {
+    flex: 1;
+}
+
+.card-name {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.card-occupation {
+    font-size: 14px;
+    color: var(--light-text);
+    margin-bottom: 5px;
+}
+
+.card-location {
+    color: var(--light-text);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.card-location i {
+    color: var(--primary-color);
+}
+
+.compatibility {
+    background: var(--gradient);
+    color: white;
+    border-radius: 20px;
+    padding: 8px 12px;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1;
+}
+
+.card-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.card-tag {
+    background-color: #FFEAED;
+    color: var(--primary-color);
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+}
+
+/* Swipe overlays */
+.swipe-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#likeOverlay {
+    background-color: rgba(76, 175, 80, 0.1);
+}
+
+#nopeOverlay {
+    background-color: rgba(244, 67, 54, 0.1);
+}
+
+.swipe-badge {
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transform: rotate(-15deg);
+    border: 3px solid;
+}
+
+.like-badge {
+    color: #4CAF50;
+    border-color: #4CAF50;
+}
+
+.nope-badge {
+    color: #F44336;
+    border-color: #F44336;
+}
+
+/* Swipe buttons */
+.swipe-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.swipe-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    transition: var(--transition);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.swipe-btn.reject {
+    background-color: white;
+    color: #F44336;
+    border: 2px solid #FFCDD2;
+}
+
+.swipe-btn.info {
+    background-color: white;
+    color: #2196F3;
+    border: 2px solid #BBDEFB;
+    font-size: 22px;
+}
+
+.swipe-btn.like {
+    background-color: white;
+    color: #4CAF50;
+    border: 2px solid #C8E6C9;
+}
+
+.swipe-btn:hover {
+    transform: scale(1.1);
+}
+
+.swipe-btn:active {
+    transform: scale(0.95);
+}
+
+/* Empty state */
+.swipe-empty {
+    text-align: center;
+    padding: 20px;
+}
+
+.empty-icon {
+    font-size: 40px;
+    color: var(--light-text);
+    margin-bottom: 15px;
+}
+
+.swipe-empty h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.swipe-empty p {
+    color: var(--light-text);
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Match modal */
+.match-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.match-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.match-content {
+    background: white;
+    border-radius: var(--rounded);
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    transform: scale(0.8);
+    transition: transform 0.3s;
+    animation: matchPop 0.5s forwards;
+}
+
+@keyframes matchPop {
+    0% { transform: scale(0.8); }
+    40% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.match-modal.active .match-content {
+    transform: scale(1);
+}
+
+.match-header {
+    margin-bottom: 25px;
+}
+
+.match-header h2 {
+    font-size: 28px;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.match-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.match-profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--primary-color);
+}
+
+.match-profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 50%;
+    border: 3px solid var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.match-profile-img:hover img {
+    transform: scale(1.05);
+}
+
+.match-hearts {
+    color: var(--primary-color);
+    font-size: 24px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.match-apartment {
+    margin-bottom: 30px;
+}
+
+.match-apartment p {
+    font-size: 14px;
+    color: var(--light-text);
+    margin-bottom: 10px;
+}
+
+.apartment-badge {
+    background-color: #FFEAED;
+    color: var(--primary-color);
+    padding: 10px 15px;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    margin: 0 auto;
+}
+
+.match-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Detail modal */
+.detail-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+}
+
+.detail-modal.active {
+    transform: translateY(0);
+}
+
+.detail-content {
+    max-width: 480px;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-modal .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 5;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.detail-images {
+    width: 100%;
+    height: 50vh;
+    position: relative;
+}
+
+.occupation {
+    font-size: 14px;
+    color: var(--light-text);
+    margin-bottom: 5px;
+}
+
+.compatibility-meter {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--gray);
+    margin-bottom: 15px;
+}
+
+.meter-label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.meter {
+    flex: 1;
+    height: 10px;
+    background-color: var(--gray);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.meter-fill {
+    height: 100%;
+    background: var(--gradient);
+    border-radius: 5px;
+}
+
+.meter-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Styles pour les images du slider */
+.slider-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: none;
+    border-radius: 12px;
+    transition: opacity 0.3s ease;
+}
+
+/* Media queries */
+@media (min-width: 768px) {
+    .apartment-header {
+        flex-direction: row;
+    }
+    
+    .apartment-image {
+        width: 35%;
+        height: auto;
+    }
+    
+    .apartment-details {
+        width: 65%;
+    }
+}
+
+@media (max-width: 480px) {
+    .swipe-container {
+        height: 400px;
+    }
+    
+    .match-content {
+        padding: 20px;
+    }
+    
+    .match-profile-img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Bouton de favoris */
+.favorite-btn {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    color: #ccc;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    transition: var(--transition);
+}
+
+.favorite-btn:hover, .favorite-btn.active {
+    color: gold;
+    transform: scale(1.1);
+}
+
+.favorite-btn.active .fas {
+    color: gold;
+} 

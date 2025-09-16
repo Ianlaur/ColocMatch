@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColocMatch - Tableau de bord Propriétaire</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/owner-dashboard.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header/Navigation -->
+        <header>
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-key"></i>
+                    <span>ColocMatch</span>
+                </div>
+                <div class="nav-buttons">
+                    <button class="notifications-btn" id="notificationsBtn">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </button>
+                    <div class="user-profile-header">
+                        <img src="20250429_2140_Jeune Homme Humain_simple_compose_01jt1h0tezf1avm9q9v81q1z6f.png" alt="Photo de profil" class="header-profile-img">
+                        <span class="header-profile-name">Mon profil</span>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <div class="welcome-header">
+                    <h1>Bonjour, <span class="user-name white-text">Thomas</span> 👋</h1>
+                    <p>Tableau de bord propriétaire | <span class="date">18 mai 2025</span></p>
+                </div>
+            </section>
+
+            <!-- Apartment Section -->
+            <section class="apartment-section">
+                <div class="section-header">
+                    <h2>Mes appartements</h2>
+                    <a href="add-apartment.html" class="btn-primary add-btn">
+                        <i class="fas fa-plus"></i> Ajouter un appartement
+                    </a>
+                </div>
+                
+                <div class="apartments-grid">
+                    <div class="apartment-card">
+                        <div class="apartment-image">
+                            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXBhcnRtZW50fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="Appartement lumineux">
+                            <div class="apartment-status active">Actif</div>
+                            <div class="favorite-count">
+                                <i class="fas fa-star"></i> 12 favoris
+                            </div>
+                        </div>
+                        <div class="apartment-info">
+                            <div class="apartment-header">
+                                <h3>Appartement lumineux</h3>
+                                <p class="apartment-location"><i class="fas fa-map-marker-alt"></i> Lyon, Croix-Rousse</p>
+                            </div>
+                            <div class="apartment-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-home"></i>
+                                    <span>T4 de 85m²</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-euro-sign"></i>
+                                    <span>450€/mois/pers</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-user"></i>
+                                    <span>2 places dispo</span>
+                                </div>
+                            </div>
+                            <div class="apartment-stats">
+                                <div class="stat">
+                                    <i class="fas fa-eye"></i>
+                                    <span>142 vues</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-heart"></i>
+                                    <span>18 likes</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-user-check"></i>
+                                    <span>5 candidats</span>
+                                </div>
+                            </div>
+                            <div class="apartment-progress">
+                                <div class="progress-label">
+                                    <span>Taux de remplissage</span>
+                                    <span>50%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 50%"></div>
+                                </div>
+                            </div>
+                            <div class="apartment-actions">
+                                <button class="btn-secondary edit-btn">
+                                    <i class="fas fa-pen"></i> Modifier
+                                </button>
+                                <button class="btn-primary view-candidates-btn">
+                                    <i class="fas fa-users"></i> Voir les candidats
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="apartment-card">
+                        <div class="apartment-image">
+                            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGxvZnQlMjBhcGFydG1lbnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" alt="Loft industriel">
+                            <div class="apartment-status inactive">Inactif</div>
+                            <div class="favorite-count">
+                                <i class="fas fa-star"></i> 6 favoris
+                            </div>
+                        </div>
+                        <div class="apartment-info">
+                            <div class="apartment-header">
+                                <h3>Loft industriel</h3>
+                                <p class="apartment-location"><i class="fas fa-map-marker-alt"></i> Paris, 20ème</p>
+                            </div>
+                            <div class="apartment-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-home"></i>
+                                    <span>Loft 120m²</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-euro-sign"></i>
+                                    <span>700€/mois/pers</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-user"></i>
+                                    <span>2 places dispo</span>
+                                </div>
+                            </div>
+                            <div class="apartment-stats">
+                                <div class="stat">
+                                    <i class="fas fa-eye"></i>
+                                    <span>76 vues</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-heart"></i>
+                                    <span>6 likes</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-user-check"></i>
+                                    <span>0 candidat</span>
+                                </div>
+                            </div>
+                            <div class="apartment-progress">
+                                <div class="progress-label">
+                                    <span>Taux de remplissage</span>
+                                    <span>0%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="apartment-actions">
+                                <button class="btn-secondary edit-btn">
+                                    <i class="fas fa-pen"></i> Modifier
+                                </button>
+                                <button class="btn-primary activate-btn">
+                                    <i class="fas fa-power-off"></i> Activer
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section de messagerie avec les groupes de colocataires -->
+            <section class="messaging-section">
+                <div class="section-header">
+                    <h2>Conversations avec mes colocataires</h2>
+                </div>
+                
+                <div class="conversations-list">
+                    <div class="conversation-item active">
+                        <div class="group-avatar">
+                            <div class="avatar-stack">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZSUyMHdvbWFufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="Sophie">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBvcnRyYWl0JTIwbWFsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Lucas">
+                                <img src="20250429_2140_Jeune Homme Humain_simple_compose_01jt1h0tezf1avm9q9v81q1z6f.png" alt="Thomas">
+                            </div>
+                        </div>
+                        <div class="conversation-info">
+                            <div class="conversation-header">
+                                <h3>Coloc Croix-Rousse</h3>
+                                <span class="timestamp">14:25</span>
+                            </div>
+                            <p class="last-message">Sophie: Bonjour, nous avons une question concernant le bail...</p>
+                        </div>
+                        <div class="conversation-badge">
+                            <span>3</span>
+                        </div>
+                    </div>
+                    
+                    <div class="conversation-item">
+                        <div class="group-avatar">
+                            <div class="avatar-stack">
+                                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cG9ydHJhaXQlMjBmZW1hbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" alt="Marie">
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cG9ydHJhaXQlMjBmZW1hbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" alt="Julie">
+                            </div>
+                        </div>
+                        <div class="conversation-info">
+                            <div class="conversation-header">
+                                <h3>Coloc Paris 20ème</h3>
+                                <span class="timestamp">Hier</span>
+                            </div>
+                            <p class="last-message">Vous: Merci pour le loyer, tout est bien reçu.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="conversation-item">
+                        <div class="group-avatar single">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBvcnRyYWl0JTIwbWFsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Pierre">
+                        </div>
+                        <div class="conversation-info">
+                            <div class="conversation-header">
+                                <h3>Pierre (candidat potentiel)</h3>
+                                <span class="timestamp">Lun</span>
+                            </div>
+                            <p class="last-message">Pierre: Est-ce que l'appartement est toujours disponible ?</p>
+                        </div>
+                        <div class="conversation-badge">
+                            <span>1</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-item active" data-tab="dashboard">
+                <i class="fas fa-home"></i>
+                <span>Accueil</span>
+            </button>
+            <button class="nav-item" data-tab="messages">
+                <i class="fas fa-comments"></i>
+                <span>Messagerie</span>
+                <span class="badge">8</span>
+            </button>
+            <button class="nav-item" data-tab="profile">
+                <i class="fas fa-user"></i>
+                <span>Profil</span>
+            </button>
+        </nav>
+    </div>
+
+    <script src="js/owner-dashboard.js"></script>
+</body>
+</html> 

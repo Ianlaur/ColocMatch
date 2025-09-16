@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover, orientation=portrait">
+    <title>ColocMatch - Profil Propriétaire</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/owner-dashboard.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header/Navigation -->
+        <header>
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-key"></i>
+                    <span>ColocMatch</span>
+                </div>
+                <div class="nav-buttons">
+                    <button class="notifications-btn" id="notificationsBtn">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </button>
+                    <div class="user-profile-header">
+                        <img src="20250429_2140_Jeune Homme Humain_simple_compose_01jt1h0tezf1avm9q9v81q1z6f.png" alt="Photo de profil" class="header-profile-img">
+                        <span class="header-profile-name">Mon profil</span>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <section class="profile-section">
+                <div class="profile-header">
+                    <div class="profile-cover"></div>
+                    <div class="profile-avatar-container">
+                        <div class="profile-avatar">
+                            <img src="20250429_2140_Jeune Homme Humain_simple_compose_01jt1h0tezf1avm9q9v81q1z6f.png" alt="Photo de profil" id="profileAvatar">
+                            <button class="edit-avatar-btn" id="editAvatarBtn">
+                                <i class="fas fa-camera"></i>
+                            </button>
+                        </div>
+                        <h1 class="profile-name">Paul Dubois</h1>
+                        <p class="profile-status">Propriétaire</p>
+                    </div>
+                </div>
+
+                <div class="profile-tabs">
+                    <button class="profile-tab active" data-tab="info">Informations</button>
+                    <button class="profile-tab" data-tab="properties">Mes biens</button>
+                    <button class="profile-tab" data-tab="settings">Paramètres</button>
+                </div>
+
+                <div class="profile-content">
+                    <!-- Onglet Informations -->
+                    <div class="tab-content active" id="infoTab">
+                        <div class="info-section">
+                            <h2 class="section-title">Informations personnelles</h2>
+                            <form id="personalInfoForm">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="userName">Nom complet</label>
+                                        <input type="text" id="userName" placeholder="Votre nom" value="Paul Dubois">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="userAge">Âge</label>
+                                        <input type="number" id="userAge" placeholder="Votre âge" value="42">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="userEmail">Email</label>
+                                    <input type="email" id="userEmail" placeholder="Votre email" value="paul.dubois@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="userPhone">Téléphone</label>
+                                    <input type="tel" id="userPhone" placeholder="Votre numéro de téléphone" value="06 12 34 56 78">
+                                </div>
+                                <div class="form-group">
+                                    <label for="userOccupation">Profession</label>
+                                    <input type="text" id="userOccupation" placeholder="Votre profession" value="Ingénieur et investisseur immobilier">
+                                </div>
+                                <div class="form-group">
+                                    <label for="userBio">Bio</label>
+                                    <textarea id="userBio" rows="4" placeholder="Parlez un peu de vous...">Propriétaire de plusieurs appartements dédiés à la colocation. Je suis à la recherche de colocataires sérieux et responsables pour mes biens situés à Lyon et Paris.</textarea>
+                                </div>
+                                <button type="button" class="btn-primary save-btn" id="savePersonalBtn">Enregistrer</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Onglet Mes biens -->
+                    <div class="tab-content" id="propertiesTab">
+                        <div class="info-section">
+                            <h2 class="section-title">Mes biens immobiliers</h2>
+                            
+                            <div class="property-list">
+                                <div class="property-card">
+                                    <div class="property-image">
+                                        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXBhcnRtZW50fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="Appartement Croix-Rousse">
+                                        <div class="property-status available">Disponible</div>
+                                    </div>
+                                    <div class="property-details">
+                                        <h3>Appartement T4 - Croix-Rousse</h3>
+                                        <p><i class="fas fa-map-marker-alt"></i> Lyon, Croix-Rousse</p>
+                                        <p><i class="fas fa-bed"></i> 3 chambres · <i class="fas fa-shower"></i> 1 salle de bain</p>
+                                        <p><i class="fas fa-euro-sign"></i> 450€/mois/personne</p>
+                                        <div class="property-stats">
+                                            <div class="stat">
+                                                <span class="stat-value">12</span>
+                                                <span class="stat-label">Visites</span>
+                                            </div>
+                                            <div class="stat">
+                                                <span class="stat-value">5</span>
+                                                <span class="stat-label">Candidats</span>
+                                            </div>
+                                            <div class="stat">
+                                                <span class="stat-value">2</span>
+                                                <span class="stat-label">Visites planifiées</span>
+                                            </div>
+                                        </div>
+                                        <div class="property-actions">
+                                            <button class="btn-outline"><i class="fas fa-eye"></i> Voir</button>
+                                            <button class="btn-outline"><i class="fas fa-edit"></i> Modifier</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="property-card">
+                                    <div class="property-image">
+                                        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXBhcnRtZW50fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="Loft Paris">
+                                        <div class="property-status occupied">Occupé</div>
+                                    </div>
+                                    <div class="property-details">
+                                        <h3>Loft - Paris 20ème</h3>
+                                        <p><i class="fas fa-map-marker-alt"></i> Paris, 20ème arrondissement</p>
+                                        <p><i class="fas fa-bed"></i> 2 chambres · <i class="fas fa-shower"></i> 1 salle de bain</p>
+                                        <p><i class="fas fa-euro-sign"></i> 550€/mois/personne</p>
+                                        <div class="property-stats">
+                                            <div class="stat">
+                                                <span class="stat-value">24</span>
+                                                <span class="stat-label">Visites</span>
+                                            </div>
+                                            <div class="stat">
+                                                <span class="stat-value">8</span>
+                                                <span class="stat-label">Candidats</span>
+                                            </div>
+                                            <div class="stat">
+                                                <span class="stat-value">0</span>
+                                                <span class="stat-label">Visites planifiées</span>
+                                            </div>
+                                        </div>
+                                        <div class="property-actions">
+                                            <button class="btn-outline"><i class="fas fa-eye"></i> Voir</button>
+                                            <button class="btn-outline"><i class="fas fa-edit"></i> Modifier</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="property-card">
+                                    <div class="property-image">
+                                        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGFwYXJ0bWVudHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="T3 Lyon Part-Dieu">
+                                        <div class="property-status occupied">Occupé</div>
+                                    </div>
+                                    <div class="property-details">
+                                        <h3>Appartement T3 - Lyon Part-Dieu</h3>
+                                        <p><i class="fas fa-map-marker-alt"></i> Lyon, Part-Dieu</p>
+                                        <p><i class="fas fa-bed"></i> 2 chambres · <i class="fas fa-shower"></i> 1 salle de bain</p>
+                                        <p><i class="fas fa-euro-sign"></i> 420€/mois/personne</p>
+                                        <div class="property-stats">
+                                            <div class="stat">
+                                                <span class="stat-value">18</span>
+                                                <span class="stat-label">Visites</span>
+                                            </div>
+                                            <div class="stat">
+                                                <span class="stat-value">6</span>
+                                                <span class="stat-label">Candidats</span>
+                                            </div>
+                                            <div class="stat">
+                                                <span class="stat-value">0</span>
+                                                <span class="stat-label">Visites planifiées</span>
+                                            </div>
+                                        </div>
+                                        <div class="property-actions">
+                                            <button class="btn-outline"><i class="fas fa-eye"></i> Voir</button>
+                                            <button class="btn-outline"><i class="fas fa-edit"></i> Modifier</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="add-property-container">
+                                <button class="btn-primary add-property-btn">
+                                    <i class="fas fa-plus"></i> Ajouter un nouveau bien
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Onglet Paramètres -->
+                    <div class="tab-content" id="settingsTab">
+                        <div class="info-section">
+                            <h2 class="section-title">Paramètres du compte</h2>
+                            
+                            <div class="settings-group">
+                                <h3>Notifications</h3>
+                                <div class="settings-options">
+                                    <div class="settings-option">
+                                        <div class="option-info">
+                                            <h4>Nouveaux messages</h4>
+                                            <p>Recevez des notifications pour les nouveaux messages</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="settings-option">
+                                        <div class="option-info">
+                                            <h4>Nouvelles candidatures</h4>
+                                            <p>Recevez des notifications pour les nouvelles candidatures</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="settings-option">
+                                        <div class="option-info">
+                                            <h4>Rappels de paiement</h4>
+                                            <p>Recevez des notifications pour les rappels de paiement</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="settings-option">
+                                        <div class="option-info">
+                                            <h4>Alertes de contrat</h4>
+                                            <p>Notifications pour les échéances de contrat</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="settings-group">
+                                <h3>Sécurité</h3>
+                                <div class="settings-options">
+                                    <div class="settings-option">
+                                        <div class="option-info">
+                                            <h4>Changer de mot de passe</h4>
+                                            <p>Modifier votre mot de passe actuel</p>
+                                        </div>
+                                        <button class="btn-outline">Modifier</button>
+                                    </div>
+                                    
+                                    <div class="settings-option">
+                                        <div class="option-info">
+                                            <h4>Authentification à deux facteurs</h4>
+                                            <p>Ajouter une couche de sécurité supplémentaire</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="settings-group">
+                                <h3>Documents légaux</h3>
+                                <div class="settings-options doc-options">
+                                    <div class="document-card">
+                                        <div class="document-icon">
+                                            <i class="fas fa-file-contract"></i>
+                                        </div>
+                                        <div class="document-info">
+                                            <h4>Modèle de bail</h4>
+                                            <p>Dernier modèle: 12/05/2023</p>
+                                        </div>
+                                        <button class="btn-outline btn-sm">Télécharger</button>
+                                    </div>
+                                    
+                                    <div class="document-card">
+                                        <div class="document-icon">
+                                            <i class="fas fa-file-alt"></i>
+                                        </div>
+                                        <div class="document-info">
+                                            <h4>État des lieux type</h4>
+                                            <p>Dernier modèle: 03/04/2023</p>
+                                        </div>
+                                        <button class="btn-outline btn-sm">Télécharger</button>
+                                    </div>
+                                    
+                                    <div class="document-card">
+                                        <div class="document-icon">
+                                            <i class="fas fa-file-invoice"></i>
+                                        </div>
+                                        <div class="document-info">
+                                            <h4>Attestation de loyer</h4>
+                                            <p>Dernier modèle: 15/06/2023</p>
+                                        </div>
+                                        <button class="btn-outline btn-sm">Télécharger</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="settings-group">
+                                <h3>Aide et assistance</h3>
+                                <div class="help-options">
+                                    <a href="#" class="help-link"><i class="fas fa-question-circle"></i> Centre d'aide</a>
+                                    <a href="#" class="help-link"><i class="fas fa-headset"></i> Contacter le support</a>
+                                    <a href="#" class="help-link"><i class="fas fa-book"></i> Guide du propriétaire</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Modal Changement de photo -->
+            <div class="modal" id="avatarModal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Changer de photo de profil</h2>
+                        <button class="close-modal-btn">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="photo-options">
+                            <div class="photo-option">
+                                <div class="photo-preview">
+                                    <img src="20250429_2140_Jeune Homme Humain_simple_compose_01jt1h0tezf1avm9q9v81q1z6f.png" alt="Photo actuelle">
+                                </div>
+                                <p>Photo actuelle</p>
+                            </div>
+                            
+                            <div class="upload-container">
+                                <div class="upload-area" id="uploadArea">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <p>Déposez votre photo ici ou</p>
+                                    <button class="btn-outline browse-btn">Parcourir</button>
+                                    <input type="file" id="photoUpload" hidden accept="image/*">
+                                </div>
+                                <div class="preview-container" id="previewContainer" style="display: none;">
+                                    <img src="" alt="Aperçu" id="imagePreview">
+                                    <button class="btn-outline remove-btn" id="removePreview">Annuler</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="avatar-actions">
+                            <button class="btn-secondary" id="cancelAvatarBtn">Annuler</button>
+                            <button class="btn-primary" id="saveAvatarBtn">Enregistrer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-item" data-tab="dashboard">
+                <i class="fas fa-home"></i>
+                <span>Accueil</span>
+            </button>
+            <button class="nav-item" data-tab="messages">
+                <i class="fas fa-comments"></i>
+                <span>Messagerie</span>
+                <span class="badge">8</span>
+            </button>
+            <button class="nav-item active" data-tab="profile">
+                <i class="fas fa-user"></i>
+                <span>Profil</span>
+            </button>
+        </nav>
+    </div>
+
+    <script src="js/owner-profile.js"></script>
+</body>
+</html> 

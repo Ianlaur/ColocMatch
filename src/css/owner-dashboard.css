@@ -1,0 +1,1378 @@
+/* Styles pour le tableau de bord du propriétaire */
+:root {
+    --primary-color: #FF385C;
+    --secondary-color: #00B9BC;
+    --text-color: #333333;
+    --light-text: #666666;
+    --border-color: #E5E5E5;
+    --light-bg: #F8F9FA;
+    --white: #FFFFFF;
+    --success-color: #34C759;
+    --error-color: #FF3B30;
+    --warning-color: #FF9500;
+    --gradient: linear-gradient(135deg, #FF385C, #FF7676);
+}
+
+/* Structure principale */
+main {
+    padding: 15px;
+    background-color: var(--light-bg);
+}
+
+section {
+    background-color: var(--white);
+    border-radius: var(--rounded);
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--gray);
+}
+
+.section-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.add-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    font-size: 14px;
+}
+
+.view-all-btn {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Section Welcome */
+.welcome-section {
+    padding: 20px;
+    background: var(--gradient);
+    color: white;
+}
+
+.welcome-header h1 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.user-name {
+    font-weight: 700;
+}
+
+.welcome-header p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+}
+
+.stats-cards {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.stat-card {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    backdrop-filter: blur(2px);
+}
+
+.stat-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.stat-info h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.stat-value {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* Section Apartments */
+.apartments-grid {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.apartment-card {
+    border: 1px solid var(--gray);
+    border-radius: var(--rounded);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.apartment-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.apartment-image {
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+}
+
+.apartment-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.apartment-status {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+}
+
+.apartment-status.active {
+    background-color: #4CAF50;
+}
+
+.apartment-status.inactive {
+    background-color: var(--dark-gray);
+}
+
+.apartment-info {
+    padding: 15px;
+}
+
+.apartment-info h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.apartment-location {
+    color: var(--light-text);
+    font-size: 14px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.apartment-details {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--light-text);
+    font-size: 13px;
+}
+
+.detail-item i {
+    color: var(--primary-color);
+}
+
+.apartment-stats {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--gray);
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    color: var(--light-text);
+}
+
+.stat i {
+    color: var(--dark-gray);
+}
+
+.apartment-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.apartment-actions button {
+    flex: 1;
+    font-size: 14px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+/* Section Users */
+.users-grid {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.user-card {
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    border: 1px solid var(--gray);
+    border-radius: var(--rounded);
+    transition: transform 0.3s ease;
+}
+
+.user-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.user-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.user-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-info {
+    flex: 1;
+}
+
+.user-info h3 {
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+.user-occupation {
+    color: var(--light-text);
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.user-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.compatibility {
+    background-color: #FFEAED;
+    color: var(--primary-color);
+    padding: 5px 10px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.compatibility span {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.compatibility p {
+    font-size: 12px;
+}
+
+.user-meta {
+    flex: 1;
+    padding-left: 10px;
+}
+
+.user-meta p {
+    font-size: 13px;
+    color: var(--light-text);
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.user-meta i {
+    color: var(--primary-color);
+}
+
+.user-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.user-actions button {
+    padding: 8px 12px;
+    font-size: 13px;
+}
+
+.reject-btn, .message-btn {
+    padding: 8px !important;
+    aspect-ratio: 1/1;
+}
+
+.profile-view-btn {
+    flex: 1;
+}
+
+/* Modal Add Apartment */
+.add-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.add-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    background-color: white;
+    border-radius: var(--rounded);
+    overflow-y: auto;
+    transform: scale(0.95);
+    transition: transform 0.3s;
+}
+
+.add-modal.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-header {
+    padding: 20px;
+    border-bottom: 1px solid var(--gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 10;
+}
+
+.modal-header h2 {
+    font-size: 20px;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.form-group {
+    margin-bottom: 5px;
+}
+
+.form-group.full-width {
+    grid-column: span 2;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--gray);
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.photo-upload-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.photo-upload {
+    width: 120px;
+    height: 120px;
+    border: 2px dashed var(--gray);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.photo-upload input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.upload-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-text);
+    padding: 10px;
+    text-align: center;
+}
+
+.upload-placeholder i {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.upload-placeholder span {
+    font-size: 12px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.notification-btn {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 18px;
+    color: var(--dark-gray);
+    background-color: var(--gray);
+    margin-right: 10px;
+}
+
+.notification-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.notification-btn .badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 18px;
+    height: 18px;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .stats-cards {
+        margin-top: 30px;
+    }
+    
+    .apartments-grid,
+    .users-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-header h1 {
+        font-size: 20px;
+    }
+    
+    .stats-cards {
+        flex-direction: column;
+    }
+    
+    .user-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .user-stats {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .user-meta {
+        padding-left: 0;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-group.full-width {
+        grid-column: span 1;
+    }
+}
+
+/* Welcome Section */
+.welcome-section {
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+.welcome-header {
+    margin-bottom: 20px;
+}
+
+.welcome-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.welcome-header p {
+    color: var(--light-text);
+    font-size: 15px;
+}
+
+.user-name {
+    color: var(--primary-color);
+}
+
+.stats-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+.stat-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: var(--white);
+    flex-shrink: 0;
+}
+
+.stat-card:nth-child(1) .stat-icon {
+    background: linear-gradient(135deg, #FF385C, #FF7676);
+}
+
+.stat-card:nth-child(2) .stat-icon {
+    background: linear-gradient(135deg, #FF9500, #FFCC00);
+}
+
+.stat-card:nth-child(3) .stat-icon {
+    background: linear-gradient(135deg, #00B9BC, #00D8DB);
+}
+
+.stat-card:nth-child(4) .stat-icon {
+    background: linear-gradient(135deg, #5A5BF3, #8C8DF5);
+}
+
+.stat-info h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--light-text);
+}
+
+.stat-value {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* Section Headers */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding: 0 20px;
+}
+
+.section-header h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.add-btn, .view-all-btn {
+    border-radius: 30px;
+    padding: 8px 18px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.add-btn:hover, .view-all-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Apartments Grid */
+.apartment-section {
+    margin-bottom: 40px;
+}
+
+.apartments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.apartment-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.apartment-card:hover {
+    transform: translateY(-5px);
+}
+
+.apartment-image {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+}
+
+.apartment-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.apartment-card:hover .apartment-image img {
+    transform: scale(1.05);
+}
+
+.apartment-status {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.apartment-status.active {
+    background-color: var(--success-color);
+}
+
+.apartment-status.inactive {
+    background-color: var(--warning-color);
+}
+
+.favorite-count {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.favorite-count i {
+    color: #FFD700;
+}
+
+.apartment-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.apartment-header {
+    margin-bottom: 15px;
+}
+
+.apartment-header h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.apartment-location {
+    font-size: 14px;
+    color: var(--light-text);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0;
+}
+
+.apartment-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.detail-item i {
+    font-size: 18px;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.detail-item span {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.apartment-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.stat i {
+    font-size: 16px;
+    color: var(--light-text);
+    margin-bottom: 5px;
+}
+
+.stat span {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.apartment-progress {
+    margin-bottom: 20px;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-size: 13px;
+    color: var(--light-text);
+}
+
+.progress-bar {
+    height: 6px;
+    background-color: var(--light-bg);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--gradient);
+    border-radius: 10px;
+}
+
+.apartment-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.apartment-actions button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: #e82e50;
+}
+
+.btn-secondary {
+    background-color: var(--light-bg);
+    color: var(--text-color);
+}
+
+.btn-secondary:hover {
+    background-color: #e5e5e5;
+}
+
+/* Users Section */
+.users-section {
+    margin-bottom: 40px;
+}
+
+.users-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.user-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    display: flex;
+    transition: all 0.3s ease;
+}
+
+.user-card:hover {
+    transform: translateY(-3px);
+}
+
+.user-image {
+    width: 100px;
+    height: 100%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.user-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-info {
+    padding: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-header {
+    margin-bottom: 10px;
+}
+
+.user-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.user-occupation {
+    font-size: 13px;
+    color: var(--light-text);
+    margin: 0;
+}
+
+.user-stats {
+    display: flex;
+    margin-bottom: 15px;
+    gap: 15px;
+}
+
+.compatibility {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--light-bg);
+    border-radius: 8px;
+    min-width: 75px;
+}
+
+.compatibility span {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.compatibility p {
+    font-size: 10px;
+    color: var(--light-text);
+    margin: 0;
+}
+
+.user-meta {
+    flex: 1;
+}
+
+.user-meta p {
+    font-size: 12px;
+    color: var(--light-text);
+    margin: 0 0 5px 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.user-meta p i {
+    color: var(--primary-color);
+    font-size: 14px;
+}
+
+.user-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.user-actions button {
+    flex: 1;
+    padding: 8px;
+    font-size: 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.message-btn, .reject-btn {
+    width: 36px;
+    flex: none;
+}
+
+/* Pour les notifications */
+.notifications-btn {
+    position: relative;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 10px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .stats-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .apartment-details,
+    .apartment-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .user-card {
+        flex-direction: column;
+    }
+    
+    .user-image {
+        width: 100%;
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .apartment-actions {
+        flex-direction: column;
+    }
+    
+    .add-btn {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+}
+
+/* Tips Section Styles */
+.tips-section {
+    margin-bottom: 40px;
+}
+
+.tips-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.tip-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    display: flex;
+    gap: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.tip-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: var(--white);
+    flex-shrink: 0;
+}
+
+.tip-card:nth-child(1) .tip-icon {
+    background: linear-gradient(135deg, #FF9500, #FFCC00);
+}
+
+.tip-card:nth-child(2) .tip-icon {
+    background: linear-gradient(135deg, #00B9BC, #00D8DB);
+}
+
+.tip-card:nth-child(3) .tip-icon {
+    background: linear-gradient(135deg, #5A5BF3, #8C8DF5);
+}
+
+.tip-content {
+    flex: 1;
+}
+
+.tip-content h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.tip-content p {
+    font-size: 14px;
+    color: var(--light-text);
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.tip-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.tip-link:hover {
+    color: #e82e50;
+}
+
+.tip-link i {
+    font-size: 10px;
+    transition: transform 0.2s ease;
+}
+
+.tip-link:hover i {
+    transform: translateX(3px);
+}
+
+.refresh-tips-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+}
+
+.refresh-tips-btn i {
+    font-size: 14px;
+}
+
+.refresh-tips-btn:hover i {
+    animation: rotate 1s ease;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    .tips-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Added white text style */
+.white-text {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Styles pour la section de messagerie */
+.messaging-section {
+    margin-bottom: 40px;
+}
+
+.conversations-list {
+    padding: 0 20px;
+}
+
+.conversation-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 12px;
+    background-color: var(--white);
+    margin-bottom: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.conversation-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.conversation-item.active {
+    border-left: 4px solid var(--primary-color);
+}
+
+.group-avatar {
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+
+.avatar-stack {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.avatar-stack img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid white;
+    position: absolute;
+    object-fit: cover;
+}
+
+.avatar-stack img:nth-child(1) {
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.avatar-stack img:nth-child(2) {
+    top: 8px;
+    left: 16px;
+    z-index: 2;
+}
+
+.avatar-stack img:nth-child(3) {
+    top: 16px;
+    left: 8px;
+    z-index: 1;
+}
+
+.group-avatar.single img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.conversation-info {
+    flex: 1;
+}
+
+.conversation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.conversation-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-color);
+}
+
+.timestamp {
+    font-size: 12px;
+    color: var(--light-text);
+}
+
+.last-message {
+    font-size: 13px;
+    color: var(--light-text);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 250px;
+}
+
+.conversation-badge {
+    min-width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .last-message {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .last-message {
+        max-width: 150px;
+    }
+} 

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColocMatch - Mon profil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header/Navigation -->
+        <header>
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-key"></i>
+                    <span>ColocMatch</span>
+                </div>
+                <div class="nav-buttons">
+                    <button class="settings-btn" id="settingsBtn">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <div class="user-profile-header">
+                        <img src="20250429_2140_Jeune Homme Humain_simple_compose_01jt1h0tezf1avm9q9v81q1z6f.png" alt="Photo de profil" class="header-profile-img">
+                        <span class="header-profile-name">Mon profil</span>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <section class="profile-section">
+                <div class="profile-header">
+                    <div class="profile-cover"></div>
+                    <div class="profile-avatar-container">
+                        <div class="profile-avatar">
+                            <img src="20250429_2140_Jeune Homme Humain_simple_compose_01jt1h0tezf1avm9q9v81q1z6f.png" alt="Photo de profil" id="profileAvatar">
+                            <button class="edit-avatar-btn" id="editAvatarBtn">
+                                <i class="fas fa-camera"></i>
+                            </button>
+                        </div>
+                        <h1 class="profile-name">Mon profil</h1>
+                        <p class="profile-status">Chercheur de logement</p>
+                    </div>
+                </div>
+
+                <div class="profile-tabs">
+                    <button class="profile-tab active" data-tab="info">Informations</button>
+                    <button class="profile-tab" data-tab="preferences">Préférences</button>
+                    <button class="profile-tab" data-tab="activity">Activité</button>
+                </div>
+
+                <div class="profile-content">
+                    <!-- Onglet Informations -->
+                    <div class="tab-content active" id="infoTab">
+                        <div class="info-section">
+                            <h2 class="section-title">Informations personnelles</h2>
+                            <form id="personalInfoForm">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="userName">Nom complet</label>
+                                        <input type="text" id="userName" placeholder="Votre nom" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="userAge">Âge</label>
+                                        <input type="number" id="userAge" placeholder="Votre âge" value="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="userEmail">Email</label>
+                                    <input type="email" id="userEmail" placeholder="Votre email" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="userPhone">Téléphone</label>
+                                    <input type="tel" id="userPhone" placeholder="Votre numéro de téléphone" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="userOccupation">Profession / Études</label>
+                                    <input type="text" id="userOccupation" placeholder="Votre profession ou études" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="userBio">Bio</label>
+                                    <textarea id="userBio" rows="4" placeholder="Parlez un peu de vous..."></textarea>
+                                </div>
+                                <button type="button" class="btn-primary save-btn" id="savePersonalBtn">Enregistrer</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Onglet Préférences -->
+                    <div class="tab-content" id="preferencesTab">
+                        <div class="info-section">
+                            <h2 class="section-title">Préférences de logement</h2>
+                            <form id="preferencesForm">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="budgetMin">Budget minimum (€)</label>
+                                        <input type="number" id="budgetMin" placeholder="Ex: 400" value="400">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="budgetMax">Budget maximum (€)</label>
+                                        <input type="number" id="budgetMax" placeholder="Ex: 750" value="750">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Villes préférées</label>
+                                    <div class="tags-input" id="locationsInput">
+                                        <div class="tag">Paris <span class="remove-tag">×</span></div>
+                                        <div class="tag">Lyon <span class="remove-tag">×</span></div>
+                                        <div class="tag">Bordeaux <span class="remove-tag">×</span></div>
+                                        <input type="text" placeholder="Ajouter une ville...">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Type de logement</label>
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" value="Appartement" checked> Appartement
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" value="Maison" checked> Maison
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" value="Studio" checked> Studio
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" value="Loft"> Loft
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Préférences colocataires</label>
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" value="Étudiant" checked> Étudiant
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" value="Jeune actif" checked> Jeune actif
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" value="Non-fumeur"> Non-fumeur
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" value="Animal friendly"> Animal friendly
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <button type="button" class="btn-primary save-btn" id="savePreferencesBtn">Enregistrer</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Onglet Activité -->
+                    <div class="tab-content" id="activityTab">
+                        <div class="info-section">
+                            <h2 class="section-title">Votre activité</h2>
+                            
+                            <div class="stats-grid">
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-heart"></i>
+                                    </div>
+                                    <div class="stat-info">
+                                        <h3>Likes envoyés</h3>
+                                        <p class="stat-value">14</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-comment"></i>
+                                    </div>
+                                    <div class="stat-info">
+                                        <h3>Conversations</h3>
+                                        <p class="stat-value">5</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="stat-info">
+                                        <h3>Favoris</h3>
+                                        <p class="stat-value" id="favoritesCount">3</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-handshake"></i>
+                                    </div>
+                                    <div class="stat-info">
+                                        <h3>Matchs</h3>
+                                        <p class="stat-value">2</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-section">
+                                <h3>Activité récente</h3>
+                                <div class="activity-list">
+                                    <div class="activity-item">
+                                        <div class="activity-icon">
+                                            <i class="fas fa-heart"></i>
+                                        </div>
+                                        <div class="activity-details">
+                                            <p>Vous avez liké <strong>Appartement lumineux</strong></p>
+                                            <span class="activity-time">Il y a 2 jours</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="activity-item">
+                                        <div class="activity-icon">
+                                            <i class="fas fa-comment"></i>
+                                        </div>
+                                        <div class="activity-details">
+                                            <p>Nouvelle conversation avec <strong>Sophie</strong></p>
+                                            <span class="activity-time">Il y a 3 jours</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="activity-item">
+                                        <div class="activity-icon">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="activity-details">
+                                            <p>Vous avez ajouté <strong>Loft industriel</strong> à vos favoris</p>
+                                            <span class="activity-time">Il y a 5 jours</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Modal Changement de photo -->
+            <div class="modal" id="avatarModal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Changer de photo de profil</h2>
+                        <button class="close-btn" id="closeAvatarModal">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="avatar-preview">
+                            <img src="profile-picture.png" alt="Aperçu" id="avatarPreview">
+                        </div>
+                        <div class="avatar-options">
+                            <button class="btn-secondary" id="uploadAvatarBtn">
+                                <i class="fas fa-upload"></i> Télécharger une photo
+                            </button>
+                            <input type="file" id="avatarInput" accept="image/*" style="display: none;">
+                            <button class="btn-secondary" id="useDefaultAvatarBtn">
+                                <i class="fas fa-user"></i> Utiliser avatar par défaut
+                            </button>
+                        </div>
+                        <div class="modal-actions">
+                            <button class="btn-secondary" id="cancelAvatarBtn">Annuler</button>
+                            <button class="btn-primary" id="saveAvatarBtn">Enregistrer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-item" data-tab="swipe">
+                <i class="fas fa-home"></i>
+                <span>Découvrir</span>
+            </button>
+            <button class="nav-item" data-tab="matches">
+                <i class="fas fa-comments"></i>
+                <span>Messages</span>
+                <span class="badge" id="messagesBadge">2</span>
+            </button>
+            <button class="nav-item" data-tab="favorites">
+                <i class="fas fa-star"></i>
+                <span>Favoris</span>
+            </button>
+            <button class="nav-item active" data-tab="profile">
+                <i class="fas fa-user"></i>
+                <span>Profil</span>
+            </button>
+        </nav>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html> 
