@@ -1,0 +1,253 @@
+1. Vue d’ensemble du projet
+
+Objectif produit
+Coloc’Match est une application mobile-first pour trouver une colocation ou un logement à Paris avec une interface type « swipe » (comme Tinder).
+Fonctions principales : onboarding, profil, swipe/matching, messagerie en temps réel, calendrier de visites, module d’évaluation.
+
+Mission de la communication
+
+Tenir l’équipe et les partenaires informés.
+
+Attirer les premiers utilisateurs à Paris.
+
+Renforcer la confiance (modération, avis, RGPD).
+
+2. Parties prenantes (Stakeholders)
+
+Product Owner / Chef d’équipe : Tara Meneleck — vision produit, priorisation, relations partenaires.
+
+Partenariats & Charte graphique : Enzo Paroissien — partenariats, identité visuelle.
+
+CTO / Lead dev : Ian — dev, infrastructure, intégrations techniques.
+
+Communication / Réseaux : Agathe — réseaux sociaux, community management.
+
+Support & Modération : (à définir)
+
+Compliance / Legal (RGPD, CGU/CGV) : (à définir)
+
+Partenaires externes : agences immo, universités, BDE (contact géré par Enzo).
+
+Utilisateurs finaux : personnes cherchant une colocation et propriétaires.
+
+3. Objectifs de communication
+
+Interne : garder l’équipe alignée sur la roadmap et les priorités.
+
+Externe (acquisition) : générer 2 000 installations (MVP) à Paris sur les 3 mois suivant le lancement.
+
+Confiance & rétention : viser NPS (Net Promoter Score) ≥ 30.
+
+Partenaires : onboard 10 agences/propriétaires pour tester le calendrier.
+
+Ces chiffres sont proposés. Dis-moi si tu veux changer.
+
+4. Messages clés
+
+Produit : « Trouve ta coloc à Paris en quelques swipes. »
+
+Confiance : « Avis vérifiés et modération. »
+
+Simplicité : « Inscription rapide, interface mobile-first. »
+
+Sécurité : « Données protégées, conformité RGPD (GDPR). »
+
+5. Canaux de communication
+
+Interne
+
+Slack (#dev, #product, #growth, #support)
+
+Notion (doc produit, roadmap)
+
+Réunions hebdo (sprint planning, retro)
+
+GitHub / Issues (suivi dev)
+
+Externe
+
+Landing page + newsletter (early access)
+
+App Stores (préparer les pages)
+
+Instagram & TikTok (contenu, témoignages)
+
+LinkedIn (partenaires)
+
+E-mailing (drip onboarding)
+
+Presse locale et blogs logement
+
+Partenariats campus / affichage local
+
+Plateformes d’annonces et agences
+
+Support : in-app chat / email / FAQ
+
+6. Matrice de communication (exemple)
+Quoi communiquer?	Livrable / Contenu	Canal	Fréquence	Owner
+Lancement MVP	Communiqué + landing page	Newsletter, réseaux, presse	1x (launch)	Growth / Product (Tara)
+Roadmap produit	Roadmap publique / interne	Notion / Slack	Mensuel	Tara
+Statut dev / blocages	Weekly status report	Réunion, Slack	Hebdomadaire	Ian / Scrum master
+Campagne d’acquisition	Creatives & copies	Ads (IG/TikTok)	Selon campagne	Agathe
+Partenariats	Kit partenariat	Email / RDV	Au besoin	Enzo
+Incidents / signalements	Rapport incident	Slack / Jira	Immédiat	Support (à définir)
+Feedback utilisateurs	Synthèse retours	Notion / Slack	Bi-hebdomadaire	Tara / UX
+Modération avis	Politique & actions	Dashboard interne	Continue	Support (à définir)
+KPI produit	Dashboard (DAU, WAU, retention, match rate)	Notion / Looker	Hebdo / Mensuel	Product / Growth
+7. Plan d’escalade
+
+Niveau 1 — Équipe produit & dev
+
+Canal : Slack, GitHub.
+
+Délai attendu : < 24h.
+
+Niveau 2 — CTO / Product Owner
+
+Canal : réunion / email.
+
+Délai : 24–48h.
+
+Niveau 3 — Partenaires externes
+
+Canal : meeting / email officiel.
+
+Délai : 48h.
+
+Niveau 4 — Communication de crise
+
+Cas : fuite de données, panne majeure.
+
+Action : déclaration officielle, hotline, working group.
+
+Délai : immédiat — Legal + Product.
+
+8. Formation & onboarding internes
+
+Kit onboarding : accès Notion, Slack, repo GitHub.
+
+Sessions recommandées : product walkthrough (1h), demo technique (1h), support/modération (30 min).
+
+Docs : templates réponses support, guide modération, checklist RGPD.
+
+9. Stratégie de lancement & phases
+
+Alpha (closed beta) — 4–6 semaines
+
+Public : réseau fermé (amis, campus).
+
+Objectif : tests UX et matching.
+
+Actions : invitations par code, survey in-app.
+
+Beta (early users) — 6–8 semaines
+
+Public : étudiants et jeunes actifs à Paris.
+
+Objectif : 500–1 500 installs, tester messagerie et calendrier.
+
+Actions : partenariats campus, posts IG/TikTok, landing.
+
+Public (scale)
+
+Public : tout Paris.
+
+Objectif : montée en charge, monétisation testée.
+
+Actions : PR locale, campagnes paid, optimisation App Store.
+
+10. Support, modération & confiance
+
+Signalement facile dans l’app.
+
+Modération priorisée.
+
+Avis publiés seulement après visite confirmée (proposition).
+
+Vérification profils : email/téléphone obligatoire, ID optionnel pour hôtes.
+
+Procédure de blocage/ban en cas d’abus.
+
+11. Politique RGPD & sécurité (résumé)
+
+Collecte minimale : nom, âge, photos, localisation approximative.
+
+Stockage chiffré des données sensibles.
+
+Consentement explicite pendant l’onboarding.
+
+Processus pour droit à l’oubli.
+
+Contrats RGPD avec fournisseurs (WebSocket, calendrier).
+
+12. Événements projet & célébrations
+
+Lancement MVP : event interne + posts officiels.
+
+Meetup utilisateurs (1er mois post-lancement).
+
+Démos et revues à la fin de chaque sprint (2 semaines).
+
+13. Indicateurs (KPI) à suivre
+
+Acquisition : installations, coût par acquisition (si ads).
+
+Activation : % qui finissent l’onboarding.
+
+Engagement : DAU (Daily Active Users), WAU (Weekly Active Users), swipes/jour, messages/jour.
+
+Matching : taux de match (likes mutuels).
+
+Rétention : D7 (retention à 7 jours), D30 (retention à 30 jours).
+
+Qualité : taux de signalement, % d’avis positifs, NPS (Net Promoter Score).
+
+Opérationnel : temps moyen de réponse support, délai moyen d’acceptation de visite.
+
+14. Templates rapides
+
+Newsletter (early access)
+
+Objet : Rejoins Coloc’Match — test en avant-première à Paris !
+Corps : pitch court + bouton “Obtenir le code d’accès” + screenshot de l’interface swipe.
+
+Alerte incident (interne)
+
+Objet : [URGENT] Incident API — impact messages
+Corps : description, impact, actions en cours, ETA, owner.
+
+Communiqué presse
+
+Titre : Lancement de Coloc’Match — Trouve ta coloc à Paris en quelques swipes
+Corps : 3 courts paragraphes (pitch, sécurité, CTA), contact presse.
+
+15. Prochaines étapes (pratiques)
+
+Mettre ce document sur Notion / GitHub.
+
+Nommer les owners manquants (Support, Legal).
+
+Préparer la landing + collecte d’emails.
+
+Créer kit comm’ : logo, palette couleurs, 3 templates posts.
+
+Lancer la campagne beta et recruter testers.
+
+Mettre en place dashboard KPI (Google Sheet / Notion / Looker).
+
+16. Points à confirmer (TBD)
+
+Support & Modération : qui gère ?
+
+Compliance / Legal : qui gère RGPD & CGU ?
+
+Cibles chiffrées : valides-tu les objectifs proposés ?
+
+Canaux prioritaires : Instagram/TikTok suffisent-ils ?
+
+Assets : as-tu le logo (SVG/PNG) et codes couleur hex ?
+
+Tech stack : Bolt + PHP backend et React (Vite) front ?
+
+Hébergement : OVH / Vercel / Render / autre ?
