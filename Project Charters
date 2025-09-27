@@ -1,0 +1,167 @@
+1. Vue d’ensemble du projet
+
+Nom du projet : Coloc’Match
+But : application mobile-first pour mettre en relation personnes cherchant une colocation ou un logement à Paris via une interface type « swipe » (Tinder-like).
+Fonctions principales : onboarding, profil, swipe/matching, messagerie (temps réel), calendrier de visites, module d’évaluation.
+
+2. Objectifs du projet
+
+Lancer un MVP fonctionnel pour Paris avec les fonctions core : onboarding, swipe, match, messagerie entre matchés, calendrier de base, évaluations.
+
+Valider l’intérêt utilisateur et les hypothèses produits (matching, prise de RDV visite).
+
+Mettre en place les bases de la confiance : modération, avis, conformité RGPD (GDPR).
+
+3. Spécifications principales
+
+Onboarding simple (nom, âge, budget, quartiers, photos, habitudes de vie).
+
+Cartes de profils/logements avec photos, budget, localisation, nb pièces/coloc.
+
+Swipe : droite = like, gauche = pass. Like mutuel → match.
+
+Messagerie accessible après match ; début en mode polling, option WebSocket/service tiers pour temps réel.
+
+Calendrier : proposer / accepter créneaux, confirmations in-app.
+
+Évaluations : noter / laisser un commentaire après visite confirmée.
+
+Dashboard KPI basique (DAU, WAU, taux de match, retention).
+
+4. Livrables
+
+Spécification fonctionnelle (doc).
+
+Maquettes UI + kit graphique (logo clé jaune, palette bleu/jaune, typographie).
+
+MVP applicatif (backend + frontend mobile-first).
+
+API messagerie ou intégration service tiers.
+
+Module calendrier (proposer/valider créneaux).
+
+Module évaluations + interface modération.
+
+Documentation technique et guide d’exploitation.
+
+Plan de communication + assets (landing, emails, posts).
+
+Dashboard KPI initial (Google Sheet / Notion).
+
+Délais (TBD) : à définir par l’équipe.
+
+5. Équipe & rôles
+
+Product Owner / Chef d’équipe : Tara Meneleck — vision produit, priorisation.
+
+Partenariats & Charte graphique : Enzo Paroissien — partenariats, identité visuelle.
+
+CTO / Lead dev : Ian — dev, infra, intégrations techniques.
+
+Communication / Réseaux : Agathe — réseaux sociaux, community management.
+
+Support & Modération : (à définir)
+
+Compliance / Legal (RGPD, CGU/CGV) : (à définir)
+
+6. Parties prenantes (stakeholders)
+
+Interne : Tara, Enzo, Ian, Agathe.
+
+Utilisateurs : personnes cherchant coloc / propriétaires.
+
+Partenaires externes : agences immo, universités, BDE (contact via Enzo).
+
+Fournisseurs techniques : WebSocket provider, service calendrier, hébergement.
+
+7. Plan de communication (résumé)
+
+Réunions équipe : 2x / semaine (standup + sync produit).
+
+Outils : Slack, Notion, GitHub, Google Drive.
+
+Externe : landing + newsletter, Instagram, TikTok, presse locale, partenariats campus.
+
+Reporting : statut hebdo (dev), synthèse produit bi-hebdo.
+
+8. Risques majeurs & mitigation
+
+Messagerie temps réel trop complexe
+
+Mitigation : lancer en polling/simple, puis migrer vers WebSocket/service tiers.
+
+Faible adoption au lancement
+
+Mitigation : closed beta ciblée (campus), partenariats locaux, créateurs.
+
+Abus / faux profils
+
+Mitigation : vérif email/tel obligatoire, modération manuelle, ID optionnel.
+
+Retard dev / scope creep
+
+Mitigation : découper en sprints, définir MVP strict, prioriser backlog.
+
+Non-conformité RGPD
+
+Mitigation : intégrer la politique données dès l’onboarding, chiffrer données sensibles, consulter un expert si besoin.
+
+9. Ressources nécessaires
+
+Dév : accès repo GitHub, postes, environnements staging/prod.
+
+Design : fichiers logo (SVG/PNG), kit UI.
+
+Infra : serveur / cloud (hébergement à définir).
+
+Outils : Notion, Slack, outil CI (GitHub Actions), outil de monitoring simple.
+
+Budget pub : (si campagnes paid) — à confirmer.
+
+10. Critères de succès (proposition)
+
+MVP livré et stable.
+
+Tests alpha/beta complétés avec retours actionnés.
+
+Engagement initial : 500–1 500 installs en Beta (valider cible).
+
+NPS (Net Promoter Score) ≥ 30 (objectif proposé).
+
+Taux de match (likes mutuels) > 20% chez early users.
+
+Retention D7 / D30 en ligne avec targets à définir.
+
+11. Gouvernance & approbation
+
+Décisions produit : Tara (PO) + consultation équipe.
+
+Tech : Ian valide choix infra.
+
+Partenariats & design : Enzo valide assets.
+
+Communication publique : Agathe valide posts (avec OK Tara).
+
+Sign-off : à ajouter (Tara, Ian, Enzo).
+
+12. Communication & plan de livrables (exemple timing à définir)
+
+Sprint 0 : préparation / specs — TBD
+
+Alpha (closed beta) : tests internes / campus — TBD
+
+Beta (early users) : test à Paris — TBD
+
+Release MVP public — TBD
+
+13. Success criteria détaillés
+
+Fonctionnalité : onboarding, swipe, messagerie, calendrier, évaluations fonctionnels.
+
+Performance : pas de blocage critique en production pour X premiers users (à définir).
+
+Conformité : RGPD respecté.
+
+Documentation : spec + guide d’exploitation publiés.
+
+Feedback : retours utilisateurs collectés et priorisés.
